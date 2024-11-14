@@ -50,9 +50,6 @@ const ProductList: NextPage = () => {
       {products && products.length > 0 ? (
         products.map((product) => (
         <div key={product.id}>
-          <h2>{product.name}</h2>
-          <p>Description: {product.description}</p>
-          <p>Price: {product.default_price}</p>
           {product.images.length > 0 ? (
             <Image 
               src={product.images[0]}
@@ -61,6 +58,9 @@ const ProductList: NextPage = () => {
               height={300} // Specify height
             />
           ) : null}
+          <h2>{product.name}</h2>
+          <p>Description: {product.description}</p>
+          <p>Price: {product.default_price}</p>
         </div>
       )))
       : (
