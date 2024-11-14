@@ -16,6 +16,7 @@ export default function Card({ product } : { product : Product }) {
             className="size-full object-cover object-center lg:size-full"
             width={300}
             height={300}
+            priority={true}
             />
         : null}
       </div>
