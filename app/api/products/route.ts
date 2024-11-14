@@ -6,11 +6,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
 });
 
 export async function GET() {
-  console.log('API route called for /api/products');
-  console.log(`Stripe${process.env.STRIPE_SECRET}`);
   try {
     const stripeRes = await stripe.products.list({
       limit: 10,
+      expand: ['data.default_price']
     });
 
     if (stripeRes.data.length === 0) {
