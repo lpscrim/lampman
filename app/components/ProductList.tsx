@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
 import type { NextPage } from "next";
-import Image from "next/image";
+import Card from "./Card";
 import Stripe from "stripe";
 
 type Product = Stripe.Product & {
@@ -10,7 +10,6 @@ type Product = Stripe.Product & {
 
 const ProductList: NextPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [error, setError] = useState<string | null>(null);
 
   const fetchProducts = useCallback(() => {
     fetch("/api/products")
@@ -26,9 +25,8 @@ const ProductList: NextPage = () => {
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
-        setError("Failed to load products. Please try again later.");
       });
-  }, [setProducts, setError]);
+  }, [setProducts]);
 
   useEffect(() => {
     fetchProducts(); // Initial fetch
@@ -36,35 +34,27 @@ const ProductList: NextPage = () => {
     const intervalId = setInterval(fetchProducts, 60000); // Fetch every minute
 
     return () => {
-      clearInterval(intervalId); 
+      clearInterval(intervalId);
     };
   }, [fetchProducts]);
 
   return (
-    <div>
-      <h1>Product List</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {products && products.length > 0 ? (
-        products.map((product) => (
-          <div key={product.id}>
-            {product.images.length > 0 ? (
-              <Image
-                src={product.images[0]}
-                alt={`Product ${product.id}`}
-                width={300} 
-                height={300} 
-              />
-            ) : null}
-            <h2>{product.name}</h2>
-            <p>Description: {product.description}</p>
-            <p>Price: £{product.default_price?.unit_amount ?
-              Math.round(product.default_price.unit_amount / 100).toFixed(2) : 'N/A'
-              }</p>
-          </div>
-        ))
-      ) : (
-        <p>No products available</p>
-      )}
+    <div className="bg-white">
+      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+          Product List
+        </h2>
+
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {products && products.length > 0 ? (
+            products.map((product) => (
+              <Card key={product.id} product={product} />
+            ))
+          ) : (
+            <p>No products available</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
