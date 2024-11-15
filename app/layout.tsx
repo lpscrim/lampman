@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NavBar2 from "@/components/NavBar2";
 
 
 export const metadata: Metadata = {
@@ -12,19 +13,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  dashboard,
-  shop
+
 }: {
   children: React.ReactNode
-  dashboard: React.ReactNode
-  shop: React.ReactNode
+
+
 }) {
   return (
     <html lang="en">
       <body>
-        {children}  
-        {dashboard}
-        {shop}
+        <NavBar2 />
+          {children}  
+        
       </body>
     </html>
   );
