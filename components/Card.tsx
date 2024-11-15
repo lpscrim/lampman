@@ -15,8 +15,7 @@ export default function Card({ product } : { product : Product }) {
             src={product.images[0]}
             className="size-full object-cover object-center lg:size-full"
             width={300}
-            height={300}
-            priority={true}
+            height={300}         
             />
         : null}
       </div>

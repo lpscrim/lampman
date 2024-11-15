@@ -24,14 +24,16 @@ const ProductList = async () => {
       throw new Error("No products found");
     }
 
-    const stripeRes = response.data.filter((product) => {
+    const activeProducts = response.data.filter((product) => {
       return product.active;
     });
-
+    const finalProducts = activeProducts.filter((product) => {
+      return Number(product.metadata.stock) > 0
+    })
     //Add dynamic filter option passed as props using URL search PArams to pass between layers and filter based on metadata.
   
 
-    products = stripeRes.map((product) => ({
+    products = finalProducts.map((product) => ({
       ...product,
       default_price: product.default_price as Stripe.Price,
     }));
