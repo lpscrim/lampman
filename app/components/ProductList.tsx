@@ -5,44 +5,42 @@ type Product = Stripe.Product & {
   default_price: Stripe.Price;
 };
 
-export const revalidate = 60
-
+export const revalidate = 60;
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
   apiVersion: "2024-10-28.acacia",
 });
 
 const ProductList = async () => {
-
   let products: Product[] = [];
-  
+
   try {
     const response = await stripe.products.list({
       limit: 10,
-      expand: ['data.default_price']
+      expand: ["data.default_price"],
     });
 
     if (response.data.length === 0) {
-      throw new Error ("No products found")
-    };
+      throw new Error("No products found");
+    }
 
-    const stripeRes = response.data.filter( product => {
+    const stripeRes = response.data.filter((product) => {
       return product.active;
     });
 
-    products = stripeRes.map(product => ({
-      ...product,
-      default_price: product.default_price as Stripe.Price
-    }));
+    //Add dynamic filter option passed as props using URL search PArams to pass between layers and filter based on metadata.
+  
 
+    products = stripeRes.map((product) => ({
+      ...product,
+      default_price: product.default_price as Stripe.Price,
+    }));
   } catch (error) {
     console.error("Error fetching products:", error);
-
   }
 
-  console.log(products)
+  console.log(products);
 
- 
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
