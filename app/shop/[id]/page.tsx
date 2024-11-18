@@ -51,7 +51,7 @@ export default async function ProductPage({
             <Image
               alt={`Product ${product.id}`}
               src={product.images[0]}
-              className=" object-cover object-center lg:size-full"
+              className="  object-center "
               width={500}
               height={500}
             />
@@ -65,7 +65,8 @@ export default async function ProductPage({
           : "N/A"}
       </p>
       <p>Description: {product?.description}</p>
-      <p></p>
+      <p>Size: {product?.metadata.size}</p>
+      <p>Stock: {product?.metadata.stock}</p>
     </div>
   );
 }
