@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import SplitText from "./animata/text/split-text";
-//DELETE UNECESSARY CSS//
 export default function NavBar2() {
   return (
     <nav className="bg-[color:--secondary]">
@@ -15,7 +14,7 @@ export default function NavBar2() {
           <SplitText text="LAMPMAN" />
         </Link>
 
-        <div className=" flex space-x-8 rtl:space-x-reverse">
+        <div className=" flex space-x-6 rtl:space-x-reverse">
           <Link href="/shop" className="text-text1 font-bold hover:text-text1h">
             Shop
           </Link>
