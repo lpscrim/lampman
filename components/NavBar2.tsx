@@ -1,4 +1,5 @@
-"use client";
+
+import DDButton from "./DDButton";
 import Image from "next/image";
 import Link from "next/link";
 import SplitText from "./animata/text/split-text";
@@ -11,13 +12,11 @@ export default function NavBar2() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image src="/favicon.ico" alt="Logo" width={30} height={30} />
-          <SplitText text="LAMPMAN" />
+          <SplitText text="LAMPMAN"/>
         </Link>
 
         <div className=" flex space-x-6 rtl:space-x-reverse">
-          <Link href="/shop" className="text-text1 font-bold hover:text-text1h">
-            Shop
-          </Link>
+          <DDButton />
           <Link href="#" className="text-text1 font-bold hover:text-text1h">
             About
           </Link>

@@ -1,13 +1,11 @@
+"use client"
 import { useRef, useState } from "react";
-
 import { cn } from "@/lib/utils";
 
 export default function SplitText({
   text = "ANIMATA",
-  className,
 }: {
   text: string;
-  className?: string;
 }) {
   const [activeIndex, setIndex] = useState<number>();
   const timer = useRef<NodeJS.Timeout>();
