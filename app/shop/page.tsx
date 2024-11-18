@@ -61,7 +61,7 @@ export default async function Shop({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-4 lg:max-w-7xl lg:px-2">
-      <p className=" text-center py-4 border-b border-t border-secondary text-3xl font-bold tracking-tight text-text2">
+      <p className=" text-center py-4 border-b-2 border-t-2 border-secondary text-3xl font-bold tracking-tight text-text2">
         Shop
       </p>
       <ShopNav />

@@ -2,6 +2,7 @@ import DDButton from "./DDButton";
 import Image from "next/image";
 import Link from "next/link";
 import SplitText from "./animata/text/split-text";
+import bulb from "../app/favicon.ico"
 export default function NavBar2() {
   return (
     <nav className="bg-[color:--secondary]">
@@ -10,7 +11,7 @@ export default function NavBar2() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image src="/favicon.ico" alt="Logo" width={30} height={30} />
+          <Image src={bulb} alt="Logo" width={38} height={38}/>
           <SplitText text="LAMPMAN" />
         </Link>
 
