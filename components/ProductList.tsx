@@ -10,7 +10,7 @@ const ProductList = async ({
   type,
 }: {
   products: Product[];
-  type: string;
+  type: string | undefined;
 }) => {
   return (
     <div className="">
