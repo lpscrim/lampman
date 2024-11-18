@@ -1,4 +1,5 @@
 import Stripe from "stripe";
+import ShopNav from "@/components/ShopNav";
 import ProductList from "@/components/ProductList";
 
 type Product = Stripe.Product & {
@@ -39,13 +40,19 @@ try {
   console.error("Error fetching products:", error);
 }
 
-export default function Shop() {
+export default function Shop({
+  searchParams,
+}: {
+  searchParams?: { [key: string]: string };
+}) {
+  
   return (
-    <div className="mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-4 lg:max-w-7xl lg:px-2">
+    <div className="mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-4 lg:max-w-7xl lg:px-2">``
       <p className="text-center text-3xl font-bold tracking-tight text-text2">
         Shop
       </p>
 
+      <ShopNav />
       <ProductList products={products} />
     </div>
   );

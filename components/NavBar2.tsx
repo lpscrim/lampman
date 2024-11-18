@@ -16,21 +16,21 @@ export default function NavBar2() {
         </Link>
 
         <div className=" flex space-x-8 rtl:space-x-reverse">
-          <Link href="/shop" className="text-text1 hover:text-text1h">
+          <Link href="/shop" className="text-text1 font-bold hover:text-text1h">
             Shop
           </Link>
-          <Link href="#" className="text-text1 hover:text-text1h">
+          <Link href="#" className="text-text1 font-bold hover:text-text1h">
             About
           </Link>
-          <Link href="#" className="text-text1 hover:text-text1h">
+          <Link href="#" className="text-text1 font-bold hover:text-text1h">
             Contact
           </Link>
-          <Link href="#" className="text-text1 hover:text-text1h">
+          <Link href="#" className="text-primary font-bold hover:text-primaryh">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth={1.5}
+              strokeWidth={2}
               stroke="currentColor"
               className="size-6"
             >

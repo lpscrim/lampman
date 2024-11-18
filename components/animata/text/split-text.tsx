@@ -18,8 +18,7 @@ export default function SplitText({
   return (
     <div
       className={cn(
-        "relative mx-auto text-1xl font-black uppercase text-logo md:text-3xl lg:text-5xl",
-        className
+        "relative mx-auto text-2xl font-black uppercase text-logo md:text-3xl lg:text-4xl",
       )}
     >
       {/** add hidden text so that we maintain the size for any text */}
