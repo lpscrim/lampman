@@ -20,9 +20,10 @@ export default async function Shop({
 
   let products: Product[] = [];
   let type: string | undefined;
-  
-  if (searchParams) {
-    type = searchParams.type;
+  const params = await searchParams;
+  //await needed?
+  if (params) {
+    type = params.type;
     console.log('type:', type);
   }
 

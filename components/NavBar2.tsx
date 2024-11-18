@@ -11,7 +11,7 @@ export default function NavBar2() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image src={bulb} alt="Logo" width={30} height={30}/>
+          <Image src={bulb} alt="Logo" width={30}/>
           <SplitText text="LAMPMAN" />
         </Link>
 
