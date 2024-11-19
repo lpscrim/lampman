@@ -18,6 +18,16 @@ const nextConfig: NextConfig = {
             port: '',
             pathname: '/links/**',
             search: '',
+        },
+        {
+          protocol: 'https',
+          hostname: 't.ly',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.collagerie.com',
+          pathname: '/**'
         }
     ]
   }
