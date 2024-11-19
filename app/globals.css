@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --background: #fcf8ed;
-  --foreground: #171717;
   --text1: #d1d5db ;
   --text1h: #9ca3af;
   --text2: #111827;
@@ -20,8 +18,15 @@
 
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+  }
+
 }
 

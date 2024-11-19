@@ -12,7 +12,9 @@
     "-": "^0.0.1",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
+    "@radix-ui/react-dialog": "^1.1.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "D": "^1.0.0",
     "lodash": "^4.17.21",
@@ -23,7 +25,8 @@
     "react-dom": "^18.3.1",
     "stripe": "^17.3.1",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "use-shopping-cart": "^3.2.0"
   },
   "devDependencies": {
     "@types/node": "^20",
