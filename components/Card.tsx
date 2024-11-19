@@ -23,7 +23,7 @@ export default function Card({ product }: { product: Product }) {
         </div>
         <div className="mt-4 flex justify-between">
           <div>
-            <h3 className="text-sm text-text2">
+            <h3 className="text-sm text-text2h">
 
                 <span aria-hidden="true" className="absolute inset-0" />
                 {product.name}
@@ -31,7 +31,7 @@ export default function Card({ product }: { product: Product }) {
             </h3>
             <p className="mt-1 text-sm text-text3">{product.metadata.size}</p>
           </div>
-          <p className="text-sm font-medium text-text2">
+          <p className="text-sm font-medium text-text2h">
             {product.default_price?.unit_amount
               ? Math.round(product.default_price.unit_amount / 100).toFixed(2)
               : "N/A"}
