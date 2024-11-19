@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function ShopNav() {
   return (
-    <div className="sm:px-6 lg:flex lg:items-center lg:justify-between">
+    <div className="mt-4 sm:px-6 lg:flex lg:items-center lg:justify-between">
       <div className="mt-5 flex lg:ml-4 lg:mt-0">
         <span className="ml-3 block mx-1 sm:mx-0">
           <Link

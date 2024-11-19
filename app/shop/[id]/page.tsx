@@ -49,7 +49,7 @@ export default async function ProductPage({
     <>
       {product ? (
         <div className="md:flex items-start justify-center py-12 xl:px-0 md:px-6 px-4">
-          <div className="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
+          <div className="xl:w-2/5 lg:w-2/5 w-80 md:block hidden">
             {product.images.length > 0 ? (
               <Image
                 alt={`Product ${product.id}`}
@@ -110,8 +110,8 @@ export default async function ProductPage({
             </div>
           </div>
           <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-            <div className="border-b border-gray-200 pb-6">
-              <p className="text-sm leading-none text-gray-600">
+            <div className="border-b border-text1 pb-6">
+              <p className="text-sm leading-none text-text2">
                 {product.metadata.type} Collection
               </p>
               <h1
@@ -121,26 +121,26 @@ export default async function ProductPage({
                     font-semibold
                     lg:leading-6
                     leading-7
-                    text-gray-800
+                    text-text2
                     mt-2
                 "
               >
                 {product.name}
               </h1>
             </div>
-            <div className="py-4 border-b border-gray-200 flex items-center justify-between">
-              <p className="text-base leading-4 text-gray-800">Size</p>
+            <div className="py-4 border-b border-text1 flex items-center justify-between">
+              <p className="text-base leading-4 text-text2">Size</p>
               <div className="flex items-center justify-center">
-                <p className="text-sm leading-none text-gray-600">
+                <p className="text-sm leading-none text-text2h">
                   {product.metadata.size}
                 </p>
                 
               </div>
             </div>
             <div className="py-4 border-b border-gray-200 flex items-center justify-between">
-              <p className="text-base leading-4 text-gray-800">Price</p>
+              <p className="text-base leading-4 text-text2">Price</p>
               <div className="flex items-center justify-center">
-                <p className="text-sm leading-none text-gray-600 mr-3">
+                <p className="text-sm leading-none text-text2h">
                   £
                   {product.default_price?.unit_amount
                     ? Math.round(
@@ -152,45 +152,45 @@ export default async function ProductPage({
             </div>
             <button
               className="
-                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800
+                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-text2
                 text-base
                 flex
                 items-center
                 justify-center
                 leading-none
-                text-white
-                bg-gray-800
+                text-text1
+                bg-secondary
                 w-full
                 py-4
-                hover:bg-gray-700
+                hover:bg-secondaryh
             "
             >
               Add to basket!
             </button>
             <div>
-              <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-7">
+              <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-text2h mt-7">
                 {product.description}
               </p>
-              <p className="text-base leading-4 mt-7 text-gray-600">
+              <p className="text-base leading-4 mt-7 text-text2h">
                 Product Code: {product.id}
               </p>
-              <p className="text-base leading-4 mt-4 text-gray-600">
+              <p className="text-base leading-4 mt-4 text-text2h">
                 Dimentions: (Create metadata for this)
               </p>
-              <p className="md:w-96 text-base leading-normal text-gray-600 mt-4">
+              <p className="md:w-96 text-base leading-normal text-text2h mt-4">
                 Made from etc etc (creeatemetaforthis)
               </p>
             </div>
             <div>
-              <div className="border-t border-b py-4 mt-7 border-gray-200">
+              <div className="border-t border-b py-4 mt-7 border-text1">
                 <div className="flex justify-between items-center cursor-pointer">
-                  <p className="text-base leading-4 text-gray-800">
+                  <p className="text-base leading-4 text-text2">
                     Shipping and returns
                   </p>
                 </div>
                 <div
                   className={
-                    "pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 "
+                    "pt-4 text-base leading-normal pr-12 mt-4 text-text2h "
                   }
                   id="sect"
                 >
@@ -200,15 +200,15 @@ export default async function ProductPage({
               </div>
             </div>
             <div>
-              <div className="border-b py-4 border-gray-200">
+              <div className="border-b py-4 border-text1">
                 <div className="flex justify-between items-center cursor-pointer">
-                  <p className="text-base leading-4 text-gray-800">
+                  <p className="text-base leading-4 text-text2">
                     Contact us
                   </p>
                 </div>
                 <div
                   className={
-                    "pt-4 text-base leading-normal pr-12 mt-4 text-gray-600 "
+                    "pt-4 text-base leading-normal pr-12 mt-4 text-text2h "
                   }
                   id="sect"
                 >
