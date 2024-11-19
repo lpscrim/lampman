@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar2 from "@/components/NavBar2";
+import CartProvider from "./providers/CartProvider";
+import ShoppingCartModal from "@/components/cart/ShoppingCartModal";
+
 
 
 export const metadata: Metadata = {
@@ -22,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NavBar2 />
-          {children}  
-        
+        <CartProvider>
+          <NavBar2 />
+          
+            {children}  
+        </CartProvider>
       </body>
     </html>
   );
