@@ -35,9 +35,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (isItemInCart) {
-      showToast.error('Item already in cart')
+      showToast.error('Item already in cart', 600)
     } else {
-      showToast.success('Added to cart')
+      showToast.success('Added to cart',600)
       setCartItems([...cartItems, item]);
     }
   };
@@ -48,7 +48,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     if (isItemInCart) {
       setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
     } else {
-        showToast.success('Item not in cart')
+        showToast.success('Item not in cart');
     }
   };
 

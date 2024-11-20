@@ -19,7 +19,7 @@ export default function Cart({
         } fixed inset-0 bg-black bg-opacity-30 z-50 `}
       >
         <div
-          className={`absolute top-1 right-0 bottom-0 bg-white z-50 w-1/2 max-w-sm transform transition-transform duration-1000 ${
+          className={`absolute top-1 right-0 bottom-0 bg-white z-50 w-1/2 max-w-md transform transition-transform duration-1000 ${
             showModal ? "translate-x-0" : "translate-x-full"
           }`}
         >
