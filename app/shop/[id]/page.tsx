@@ -55,7 +55,7 @@ export default async function ProductPage({
               <Image
                 alt={`Product ${product.id}`}
                 src={product.images[0]}
-                className="  object-center "
+                className="rounded-md  object-center "
                 width={600}
                 height={600}
               />
@@ -64,7 +64,7 @@ export default async function ProductPage({
               <Image
                 alt={`Product ${product.metadata.img1}`}
                 src={product.metadata.img1}
-                className="  object-center "
+                className="rounded-md  object-center "
                 width={600}
                 height={600}
               />
@@ -75,7 +75,7 @@ export default async function ProductPage({
               <Image
                 alt={`Product ${product.id}`}
                 src={product.images[0]}
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-md"
                 width={800}
                 height={800}
               />
@@ -85,7 +85,7 @@ export default async function ProductPage({
                 <Image
                   alt={`Product ${product.id}`}
                   src={product.metadata.img1}
-                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
+                  className="rounded-md w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
                   width={200}
                   height={200}
                 />
@@ -94,7 +94,7 @@ export default async function ProductPage({
                 <Image
                   alt={`Product ${product.id}`}
                   src={product.metadata.img2}
-                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
+                  className="rounded-md w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
                   width={200}
                   height={200}
                 />
@@ -103,7 +103,7 @@ export default async function ProductPage({
                 <Image
                   alt={`Product ${product.id}`}
                   src={product.metadata.img3}
-                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
+                  className="rounded-md w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
                   width={200}
                   height={200}
                 />

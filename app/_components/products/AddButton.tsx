@@ -26,6 +26,7 @@ export default function AddButton({ product }: { product: Product }) {
                 w-full
                 py-4
                 hover:bg-secondaryh
+                rounded-md
             "
     >
       Add to basket

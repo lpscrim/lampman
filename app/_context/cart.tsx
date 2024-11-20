@@ -35,9 +35,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
     if (isItemInCart) {
-      showToast.error('Item already in cart', 600)
+      showToast.error('Item already in cart', 700)
     } else {
-      showToast.success('Added to cart',600)
+      showToast.success('Added to cart',700)
       setCartItems([...cartItems, item]);
     }
   };
