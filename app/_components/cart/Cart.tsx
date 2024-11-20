@@ -16,10 +16,10 @@ export default function Cart({
       <div
         className={`${
           showModal ? "translate-x-0" : "translate-x-full"
-        } fixed inset-0 bg-black bg-opacity-30 z-50`}
+        } fixed inset-0 bg-black bg-opacity-30 z-50 `}
       >
         <div
-          className={`absolute top-1 right-0 bottom-0 bg-white z-50 w-1/2 transform transition-transform duration-1000 ${
+          className={`absolute top-1 right-0 bottom-0 bg-white z-50 w-1/2 max-w-sm transform transition-transform duration-1000 ${
             showModal ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -43,11 +43,11 @@ export default function Cart({
                     <Image
                       src={item.images[0]}
                       alt={item.name}
-                      className="rounded-md h-24"
-                      width={50}
-                      height={30}
+                      className="rounded-md "
+                      width={100}
+                      height={100}
                     />
-                    <div className="flex flex-col">
+                    <div className="flex w-full flex-col">
                       <h1 className="text-lg font-bold">{item.name}</h1>
                       <p className="text-gray-600">
                         £{item.default_price?.unit_amount
@@ -56,10 +56,9 @@ export default function Cart({
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-4">
-                    <p>{item.metadata.stock}</p>
+                  <div className="flex gap-4  ">
                     <button
-                      className="px-2 py-1 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                      className="ml-8 px-2 py-1 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
                       onClick={() => {
                         removeFromCart(item);
                       }}
