@@ -32,8 +32,8 @@ export default function Card({ product }: { product: Product }) {
             <p className="mt-1 text-sm text-text3">{product.metadata.size}</p>
           </div>
           <p className="text-sm font-medium text-text2h">
-            {product.default_price?.unit_amount
-              ? Math.round(product.default_price.unit_amount / 100)
+            £{product.default_price?.unit_amount
+              ? Math.round(product.default_price.unit_amount / 100).toFixed(2)
               : "N/A"}
           </p>
         </div>
