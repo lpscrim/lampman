@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBar2 from "@/components/NavBar2";
-import CartProvider from "./providers/CartProvider";
-import ShoppingCartModal from "@/components/cart/ShoppingCartModal";
+import NavBar2 from "@/app/_components/navigation/NavBar2";
+import { CartProvider } from "./_context/cart";
 
 
 
@@ -24,11 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="position-relative">
         <CartProvider>
           <NavBar2 />
-          
+          <div className="relative">
             {children}  
+          </div>
         </CartProvider>
       </body>
     </html>

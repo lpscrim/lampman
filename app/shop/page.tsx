@@ -1,6 +1,6 @@
 import Stripe from "stripe";
-import ShopNav from "@/components/ShopNav";
-import ProductList from "@/components/ProductList";
+import ShopNav from "@/app/_components/navigation/ShopNav";
+import ProductList from "@/app/_components/products/ProductList";
 
 type Product = Stripe.Product & {
   default_price: Stripe.Price;

@@ -1,5 +1,6 @@
 import Stripe from "stripe";
 import Image from "next/image";
+import AddButton from "@/app/_components/products/AddButton";
 
 type Product = Stripe.Product & {
   default_price: Stripe.Price;
@@ -150,25 +151,7 @@ export default async function ProductPage({
                 </p>
                 </div>
             </div>
-            <button
-              className="
-                focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-text2
-                text-base
-                font-bold
-                flex
-                items-center
-                justify-center
-                leading-none
-                text-primary
-                bg-secondary
-                w-full
-                py-4
-                hover:bg-secondaryh
-            "
-            >
-              Add to basket
-            </button>
-            {/* insert test button here */} 
+            <AddButton product={product}/>
             <div>
               <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-text2h mt-7">
                 {product.description}

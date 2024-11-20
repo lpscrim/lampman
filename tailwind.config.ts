@@ -21,7 +21,14 @@ export default {
         "accent": "var(--accent)",
         "logo": "var(--logo)",
       },
+      transitionDuration: {
+        '2000': '2000ms', 
+        
+      },
+  
     },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
+    
