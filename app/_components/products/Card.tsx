@@ -2,6 +2,7 @@ import Image from "next/image";
 import Stripe from "stripe";
 import Link from "next/link";
 
+
 type Product = Stripe.Product & {
   default_price: Stripe.Price;
 };

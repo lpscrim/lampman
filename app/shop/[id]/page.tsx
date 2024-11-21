@@ -151,7 +151,7 @@ export default async function ProductPage({
                 </p>
                 </div>
             </div>
-            <AddButton product={product}/>
+            <AddButton text={"Add to Basket"} product={product}/>
             <div>
               <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-text2h mt-7">
                 {product.description}

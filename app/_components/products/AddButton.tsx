@@ -4,10 +4,16 @@ import { useContext } from "react";
 import Stripe from "stripe";
 
 type Product = Stripe.Product & {
-    default_price: Stripe.Price;
-  };
+  default_price: Stripe.Price;
+};
 
-export default function AddButton({ product }: { product: Product }) {
+export default function AddButton({
+  product,
+  text,
+}: {
+  product: Product;
+  text: string;
+}) {
   const { addToCart } = useContext(CartContext)!;
 
   return (
@@ -29,7 +35,7 @@ export default function AddButton({ product }: { product: Product }) {
                 rounded-md
             "
     >
-      Add to basket
+      {text}
     </button>
   );
 }

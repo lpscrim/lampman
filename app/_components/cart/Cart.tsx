@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../_context/cart";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Cart({
   showModal,
@@ -32,30 +33,32 @@ export default function Cart({
             </button>
           </div>
           <div className="flex-col flex items-center bg-background gap-8 p-5 text-text2 text-sm">
-              <h1 className="border-b-2 px-2 border-text2 mt-10 text-2xl font-bold">Cart</h1>
+              <h1 className="border-b-2 px-2 border-text2 mt-10 text-2xl font-bold">Basket</h1>
             <div className="flex flex-col gap-4">
               {cartItems.map((item) => (
-                <div
+                <div 
                   className="flex justify-between items-center"
                   key={item.id}
                 >
-                  <div className="flex gap-4">
-                    <Image
-                      src={item.images[0]}
-                      alt={item.name}
-                      className="rounded-md "
-                      width={100}
-                      height={100}
-                    />
-                    <div className="flex w-full flex-col">
-                      <h1 className="text-lg font-bold">{item.name}</h1>
-                      <p className="text-text2">
-                        £{item.default_price?.unit_amount
-                          ? Math.round(item.default_price.unit_amount / 100).toFixed(2)
-                          : "NA"}
-                      </p>
+                  <Link href={`/shop/${item.id}`} >
+                    <div className="flex gap-4">
+                      <Image
+                        src={item.images[0]}
+                        alt={item.name}
+                        className="rounded-md "
+                        width={100}
+                        height={100}
+                      />
+                      <div className="flex w-full flex-col">
+                        <h1 className="text-lg font-bold">{item.name}</h1>
+                        <p className="text-text2">
+                          £{item.default_price?.unit_amount
+                            ? Math.round(item.default_price.unit_amount / 100).toFixed(2)
+                            : "NA"}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                   <div className="flex gap-4  ">
                     <button
                       className="ml-8 px-2 py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
