@@ -58,7 +58,7 @@ export default function Cart({
                   </div>
                   <div className="flex gap-4  ">
                     <button
-                      className="ml-8 px-2 py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-gray-700"
+                      className="ml-8 px-2 py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
                       onClick={() => {
                         removeFromCart(item);
                       }}
@@ -71,7 +71,7 @@ export default function Cart({
             </div>
             {cartItems.length > 0 ? (
               <div className="flex flex-col justify-between items-center">
-                <h1 className="text-lg font-bold">Total: £{getCartTotal()}</h1>
+                <h1 className="text-lg font-bold">Total: £{(getCartTotal()/100).toFixed(2)}</h1>
                 <button
                   className="px-4 py-2 bg-secondary text-primary text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
                   onClick={() => {

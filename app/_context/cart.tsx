@@ -60,7 +60,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const getCartTotal = () => {
     return cartItems.reduce((total, item) => {
       const unitAmount = item.default_price?.unit_amount ?? 0;
-      return (Math.round((total + unitAmount)/100));
+      console.log("Item:", item.name, "Unit Amount:", unitAmount);
+      const newTotal = Math.round(total + unitAmount);
+      console.log("Item:", item.name, "Unit Amount:", unitAmount);
+      console.log("New Total:", newTotal);
+      return newTotal;
     }, 0);
   };
 
