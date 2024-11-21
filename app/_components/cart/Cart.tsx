@@ -9,30 +9,30 @@ export default function Cart({
   showModal: boolean;
   toggle: () => null;
 }) {
-  const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } =
+  const { cartItems, removeFromCart, clearCart, getCartTotal } =
     useContext(CartContext)!;
   return (
     <>
-      <div
+      <div 
         className={`${
           showModal ? "translate-x-0" : "translate-x-full"
         } fixed inset-0 bg-black bg-opacity-30 z-50 `}
       >
-        <div
-          className={`absolute top-1 right-0 bottom-0 bg-white z-50 w-1/2 max-w-md transform transition-transform duration-1000 ${
+        <div 
+          className={`absolute top-1 right-0 bottom-0 bg-background z-50 w-1/2 max-w-md transform transition-transform duration-1000 ${
             showModal ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className="w-full py-1 px-1">
             <button
-            className="absolute right-1 px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+            className="absolute right-1 px-4 py-2 bg-secondary text-primary text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
             onClick={toggle}
           >
             Close
             </button>
           </div>
-          <div className="flex-col flex items-center bg-white gap-8 p-5 text-black text-sm">
-              <h1 className="border-b-2 px-2 border-text1 mt-10 text-2xl font-bold">Cart</h1>
+          <div className="flex-col flex items-center bg-background gap-8 p-5 text-text2 text-sm">
+              <h1 className="border-b-2 px-2 border-text2 mt-10 text-2xl font-bold">Cart</h1>
             <div className="flex flex-col gap-4">
               {cartItems.map((item) => (
                 <div
@@ -49,7 +49,7 @@ export default function Cart({
                     />
                     <div className="flex w-full flex-col">
                       <h1 className="text-lg font-bold">{item.name}</h1>
-                      <p className="text-gray-600">
+                      <p className="text-text2">
                         £{item.default_price?.unit_amount
                           ? Math.round(item.default_price.unit_amount / 100).toFixed(2)
                           : "NA"}
@@ -58,7 +58,7 @@ export default function Cart({
                   </div>
                   <div className="flex gap-4  ">
                     <button
-                      className="ml-8 px-2 py-1 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                      className="ml-8 px-2 py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-gray-700"
                       onClick={() => {
                         removeFromCart(item);
                       }}
@@ -73,7 +73,7 @@ export default function Cart({
               <div className="flex flex-col justify-between items-center">
                 <h1 className="text-lg font-bold">Total: £{getCartTotal()}</h1>
                 <button
-                  className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                  className="px-4 py-2 bg-secondary text-primary text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
                   onClick={() => {
                     clearCart();
                   }}

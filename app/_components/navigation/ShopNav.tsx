@@ -12,7 +12,7 @@ export default function ShopNav() {
           >
             <button
               type="button"
-              className="inline-flex items-center rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-inset ring-primary hover:bg-secondaryh"
+              className="space-x-1 inline-flex items-center rounded-md bg-secondary px-3 py-2 text-sm font-semibold text-primary shadow-sm ring-1 ring-inset ring-primary hover:bg-secondaryh"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ export default function ShopNav() {
           >
             <button
               type="button"
-              className="inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-secondary shadow-sm hover:bg-primaryh focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+              className="space-x-1 inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-secondary shadow-sm hover:bg-primaryh focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ export default function ShopNav() {
           >
             <button
               type="button"
-              className="inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-secondary shadow-sm hover:bg-primaryh focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+              className=" space-x-1 inline-flex items-center rounded-md bg-primary px-3 py-2 text-sm font-semibold text-secondary shadow-sm hover:bg-primaryh focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

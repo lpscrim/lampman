@@ -24,7 +24,7 @@ export default function NavBar2() {
 
   return (
   <>
-    <nav className="z-9999 bg-[color:--secondary]">
+    <nav className="z-9999 bg-secondary">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link
           href="/"
@@ -63,7 +63,7 @@ export default function NavBar2() {
           </Link>
           <button
               onClick={toggle}
-              className="flex text-primary font-bold hover:text-primaryh"
+              className="space-x-1 flex text-primary font-bold hover:text-primaryh"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
