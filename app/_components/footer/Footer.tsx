@@ -11,7 +11,7 @@ export default function Footer() {
                 href="#"
                 className="text-gray-500 cursor-pointer hover:text-gray-900"
               >
-                Company
+                Replace footer?
               </Link>
             </h2>
           </div>
@@ -21,7 +21,7 @@ export default function Footer() {
                 href="#"
                 className="text-gray-500 cursor-pointer hover:text-gray-900"
               >
-                Company
+                Replace footer?
               </Link>
             </h2>
           </div>
@@ -31,7 +31,7 @@ export default function Footer() {
                 href="#"
                 className="text-gray-500 cursor-pointer hover:text-gray-900"
               >
-                Company
+                Replace footer?
               </Link>
             </h2>
           </div>
@@ -41,7 +41,7 @@ export default function Footer() {
                 href="#"
                 className="text-gray-500 cursor-pointer hover:text-gray-900"
               >
-                Company
+                Replace footer?
               </Link>
             </h2>
           </div>
