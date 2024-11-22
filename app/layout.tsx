@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar2 from "@/app/_components/navigation/NavBar2";
 import { CartProvider } from "./_context/cart";
+import Footer from "./_components/footer/Footer";
 
 
 
@@ -30,6 +31,7 @@ export default function RootLayout({
             {children}  
           </div>
         </CartProvider>
+        <Footer />
       </body>
     </html>
   );
