@@ -28,9 +28,15 @@ const nextConfig: NextConfig = {
           protocol: 'https',
           hostname: 'www.collagerie.com',
           pathname: '/**'
+        },
+        {
+          protocol: 'https',
+          hostname: 'assets.wfcdn.com',
+          pathname: '/**'
         }
     ]
   }
 };
+
 
 export default nextConfig;

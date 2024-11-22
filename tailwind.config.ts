@@ -18,6 +18,7 @@ export default {
         "primaryh": "var(--primaryh)",
         "secondary": "var(--secondary)",
         "secondaryh": "var(--secondaryh)",
+        "primaryd": "var(--primaryd)",
         "accent": "var(--accent)",
         "logo": "var(--logo)",
       },

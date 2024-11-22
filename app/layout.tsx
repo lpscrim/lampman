@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="position-relative">
+      <body className="position-relative bg-background">
         <CartProvider>
           <NavBar2 />
           <div className="relative">
