@@ -1,5 +1,6 @@
 import Image from "next/image";
-import hero1 from "../../local_images/hero1.jpg"
+import hero1 from "../../local_images/hero1.jpg";
+import workshop1 from "../../local_images/workshop1.jpg"
 import Expandable from "../_components/animata/carousel/expandable";
 import Link from "next/link";
 
@@ -33,9 +34,55 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="inset-0 justify-center py-20 px-8 bg-gradient-to-r from-primaryd to-primary">
-        <div className=" max-w-screen-lg mx-auto ">
-          <Expandable />
+      <div className="h-screen">
+        <div className="inset-0 justify-center  py-20 h-3/5 px-8 bg-gradient-to-r from-primaryd to-primaryh">
+          <div className=" max-w-screen-lg mx-auto ">
+            <Expandable />
+          </div>
+        </div>
+        <div className="relative h-2/5">
+          <div className="absolute inset-0">
+            <Image
+              src={workshop1}
+              alt="Background Image"
+              className="object-cover object-center w-full h-full blur-sm"
+              width={8000}
+              height={8000}
+            />
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+          </div>
+        <div className="flex flex-row justify-around">
+            <div className="max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
+              <h1 className="text-3xl font-bold leading-tight mt-4 mb-2">
+                About
+              </h1>
+              <div className="flex flex-row">
+                <p className="text-sm  font-bold leading-tight h-5/6 mt-2 mb-4 px-6 lg:text-base text-pretty">
+                  At [LAMPMAN], we’re passionate about breathing new life into the
+                  past.<br></br>Specializing in the restoration and refurbishment of
+                  antique lamps, we transform forgotten treasures into stunning,
+                  functional pieces for modern homes. <br></br> 
+                  Beyond lighting, our
+                  collection boasts a fascinating array of oddities and
+                  curios—unique finds that spark curiosity and tell their own
+                  stories. <br></br> 
+                  Whether you’re looking for a one-of-a-kind statement
+                  piece or a touch of vintage charm, we’re here to help you bring
+                  character and wonder into your space. <br></br>
+                </p>
+              </div>
+            </div>
+            
+          <div className=" hidden lg:flex max-w-screen-lg text-text1 relative rounded-md z-1 flex-col top-8 mx-auto w-1/5 bg-transparent opacity-90 justify-center items-center h-auto text-center">
+          <Image
+              src={workshop1}
+              alt="Background Image"
+              className="object-cover object-center rounded-md"
+              width={500}
+              height={500}
+            />
+          </div>
+          </div>
         </div>
       </div>
     </div>
