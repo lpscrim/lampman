@@ -20,7 +20,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
     <div
       className={cn(
-        "relative flex h-full w-1/5 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
+        "relative flex h-full w-1/6 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
         {
           "flex-grow": index === activeItem,
         },
@@ -49,19 +49,25 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
 const items = [
   {
     image:
-      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_3_161_07cc5197-4135-4a7b-8430-eb925bd7c60c.jpg%3Fv%3D1683812134&w=640&q=75",
-    title: "Browse All Items",
+      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_8_185_390b0a4d-5356-4230-8f9f-eee4501ec1d1.jpg%3Fv%3D1683812134&w=1024&q=75",
+    title: "Browse All",
   },
   {
     image:
-      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPalefire_Pavillion_Brick_016_49471ad0-9229-4cfe-9515-287c88c1a4c8.jpg%3Fv%3D1683812123&w=640&q=75",
+      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_3_161_07cc5197-4135-4a7b-8430-eb925bd7c60c.jpg%3Fv%3D1683812134&w=640&q=75",
     title: "Browse Lamp",
   },
   {
     image:
-      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_8_185_390b0a4d-5356-4230-8f9f-eee4501ec1d1.jpg%3Fv%3D1683812134&w=1024&q=75",
+      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPalefire_Pavillion_Brick_016_49471ad0-9229-4cfe-9515-287c88c1a4c8.jpg%3Fv%3D1683812123&w=640&q=75",
     title: "Browse Curios",
   },
+  {
+    image:
+      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_8_185_390b0a4d-5356-4230-8f9f-eee4501ec1d1.jpg%3Fv%3D1683812134&w=1024&q=75",
+    title: "Browse Other",
+  },
+  
 ];
 
 export default function Expandable({ list = items, autoPlay = true, className }: ExpandableProps) {
