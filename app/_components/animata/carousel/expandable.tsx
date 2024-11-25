@@ -6,13 +6,13 @@ import { cn } from "@/app/_lib/utils";
 import Link from "next/link";
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
-  item: { image: string; title: string; link:{ pathname: string, query: { type: string }} };
+  item: { image: string; title: string; link: { pathname: string, query: { type: string }} };
   index: number;
   activeItem: number;
 }
 
 interface ExpandableProps {
-  list?: { image: string; title: string }[];
+  list?: { image: string; title: string; link: {pathname: string, query: { type: string }}}[];
   autoPlay?: boolean;
   className?: string;
 }
@@ -36,8 +36,8 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
         className={cn("h-full w-full object-cover", {
           "blur-[2px]": index !== activeItem,
         })}
-        width={800}
-        height={800}
+        width={1000}
+        height={1000}
       />
     
       {index === activeItem && (
@@ -55,7 +55,7 @@ const items = [
     image:
       "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_8_185_390b0a4d-5356-4230-8f9f-eee4501ec1d1.jpg%3Fv%3D1683812134&w=1024&q=75",
     title: "Browse All",
-    link:{
+    link: {
       pathname: "/shop",
       query: { type: "all" },
     },
@@ -112,7 +112,6 @@ export default function Expandable({ list = items, autoPlay = true, className }:
     <div className={cn("flex h-96 w-full gap-1", className)}>
       {list.map((item, index) => (
         <List
-          link={item.link}
           key={item.title}
           item={item}
           index={index}

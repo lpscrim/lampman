@@ -33,7 +33,7 @@ const nextConfig: NextConfig = {
           protocol: 'https',
           hostname: 'assets.wfcdn.com',
           pathname: '/**'
-        }
+        },
     ]
   }
 };
