@@ -7,7 +7,7 @@ export default function LampSection() {
         The Significance of 1950s Vintage Lamps
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mb-16">
         <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
           <Image
             src="https://www.londonfine.co.uk/cdn/shop/products/18.7310-1_1024x1024.jpg?v=1614602289"
