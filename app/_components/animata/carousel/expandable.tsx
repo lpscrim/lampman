@@ -35,6 +35,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
         alt={item.title}
         className={cn("h-full w-full object-cover", {
           "blur-[2px]": index !== activeItem,
+          "h-auto": index === activeItem,
         })}
         width={1000}
         height={1000}
@@ -87,6 +88,7 @@ const items = [
       query: { type: "all" },
     },
   },
+  
   
 ];
 
