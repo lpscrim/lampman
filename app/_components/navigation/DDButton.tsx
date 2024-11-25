@@ -1,15 +1,28 @@
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import Link from 'next/link'
+import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+
+import Link from "next/link";
 export default function DDButton() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div className="inline-flex w-full bg-clear font-bold text-text1  hover:text-text1h">
-        <Link href='/shop'>
-            <span className="inline-flex">Shop</span>
+        <Link href="/shop">
+          <span className="inline-flex">Shop</span>
         </Link>
         <MenuButton className="inline-flex">
-        <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-text1 hover:text-text1h" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
+          </svg>
         </MenuButton>
       </div>
 
@@ -18,7 +31,7 @@ export default function DDButton() {
         className="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-text1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
       >
         <div className="py-1">
-          <MenuItem >
+          <MenuItem>
             <Link
               href={{
                 pathname: "/shop",
@@ -43,5 +56,5 @@ export default function DDButton() {
         </div>
       </MenuItems>
     </Menu>
-  )
+  );
 }

@@ -39,12 +39,13 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
         width={800}
         height={800}
       />
-    </Link>
+    
       {index === activeItem && (
         <div className="absolute bottom-4 left-4 min-w-fit text-white md:bottom-8 md:left-8">
           {item.title}
         </div>
       )}
+      </Link>
     </div>
   );
 };
