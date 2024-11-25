@@ -34,8 +34,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
         src={item.image}
         alt={item.title}
         className={cn("h-full w-full object-cover", {
-          "blur-[2px]": index !== activeItem,
-          "h-auto": index === activeItem,
+          "blur-[2px] ": index !== activeItem,
         })}
         width={1000}
         height={1000}
@@ -54,7 +53,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
 const items = [
   {
     image:
-      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_8_185_390b0a4d-5356-4230-8f9f-eee4501ec1d1.jpg%3Fv%3D1683812134&w=1024&q=75",
+      "https://www.marthastewart.com/thmb/C8wLJr7Xpi7QjL92Nmo04sAOTS4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/bedroom-interior-in-the-night-957373992-190a491be1d24bd5aabef89b0dcfd578.jpg",
     title: "Browse All",
     link: {
       pathname: "/shop",
@@ -63,7 +62,7 @@ const items = [
   },
   {
     image:
-      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_3_161_07cc5197-4135-4a7b-8430-eb925bd7c60c.jpg%3Fv%3D1683812134&w=640&q=75",
+"https://www.marthastewart.com/thmb/jXxUi2eaqcNbSTuxv2nHkT94bR4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/kitchen-lamp-green-lamp-neutral-kitchen-max-pooky-0323-bd9919a357ca44f58aa1a2609c913b51-bc7662f1c92b4f0ca722ce3aad2074bc.jpeg",
     title: "Browse Lamp",
     link:{
       pathname: "/shop",
@@ -72,8 +71,7 @@ const items = [
   },
   {
     image:
-      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPalefire_Pavillion_Brick_016_49471ad0-9229-4cfe-9515-287c88c1a4c8.jpg%3Fv%3D1683812123&w=640&q=75",
-    title: "Browse Curios",
+"https://www.marthastewart.com/thmb/E1P_I5m1ZcOyFzsL5s1F90LMnc4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TripleHeartDesign_creditMadisonStoa_-09bf3d7361e34730bd7de6f9b4d466ec-ac20d6cbd1f34c0f9df4ffb377525a2a.jpeg",    title: "Browse Curios",
     link:{
       pathname: "/shop",
       query: { type: "curios" },
@@ -81,8 +79,7 @@ const items = [
   },
   {
     image:
-      "https://www.collagerie.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0567%2F2960%2F0181%2Ffiles%2FPaleFire_8_185_390b0a4d-5356-4230-8f9f-eee4501ec1d1.jpg%3Fv%3D1683812134&w=1024&q=75",
-    title: "Browse Other",
+"https://www.marthastewart.com/thmb/hqz_fU0ooK-gnFbMh-_CJjcP-f0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/sculpture-lamp-office-0721-2000-0a5161d2b80a4a3888d3041c6b6cc1d9.jpg",    title: "Browse Other",
     link:{
       pathname: "/shop",
       query: { type: "all" },

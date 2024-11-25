@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
         },
         {
           protocol: 'https',
-          hostname: 't.ly',
+          hostname: 'www.londonfine.co.uk',
           pathname: '/**',
         },
         {
@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
         {
           protocol: 'https',
           hostname: 'assets.wfcdn.com',
+          pathname: '/**'
+        },
+        {
+          protocol: 'https',
+          hostname: 'www.marthastewart.com',
           pathname: '/**'
         },
     ]
