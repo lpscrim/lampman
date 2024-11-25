@@ -38,7 +38,7 @@ export default function NavBar2() {
           <Link href="/" className="text-text1 font-bold hover:text-text1h">
             Home
           </Link>
-          <Link href="#" className="text-text1 font-bold hover:text-text1h">
+          <Link href="/home#about" className="text-text1 font-bold hover:text-text1h">
             About
           </Link>
           <DDButton />
