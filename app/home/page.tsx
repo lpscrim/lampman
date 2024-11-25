@@ -78,6 +78,7 @@ export default function Home() {
           <div className="mt-12 pt-6 max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
             <LampSection />
           </div>
+          
           </div>
         </div>
       </div>
