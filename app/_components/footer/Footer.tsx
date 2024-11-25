@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-row flex-wrap items-center justify-center w-full py-6 px-2 text-center border-t gap-y-6 gap-x-12 border-slate-200 md:justify-between">
-      <p className="block text-slate-800 font-semibold text-sm">
+    <footer className=" bg-secondary flex flex-row flex-wrap items-center justify-center w-full py-4 px-2 text-center border-t gap-y-6 gap-x-12 border-secondary md:justify-between">
+      <p className="block text-logo font-semibold text-sm">
         LampMan
       </p>
       <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
         <li>
           <Link
             href="#"
-            className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm"
+            className="text-primary hover:text-primaryh focus:text-primaryh text-sm"
           >
             About Us
           </Link>
@@ -18,7 +18,7 @@ export default function Footer() {
         <li>
           <Link
             href="#"
-            className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm"
+            className="text-primary hover:text-primaryh focus:text-primaryh text-sm"
           >
             Development
           </Link>
@@ -26,18 +26,18 @@ export default function Footer() {
         <li>
           <Link
             href="#"
-            className="text-slate-700 hover:text-slate-500 focus:text-slate-500 text-sm"
+            className="text-primary hover:text-primaryh focus:text-primaryh text-sm"
           >
             Contact Us
           </Link>
         </li>
       </ul>
-      <div className="flex flex-col items-center justify-center w-full py-4 px-2 border-t border-slate-200 md:flex-row md:justify-between">
-        <p className="block mb-4 text-sm text-center text-slate-500 md:mb-0">
+      <div className=" flex flex-col items-center justify-center w-full pt-2 px-2 border-t border-secondary md:flex-row md:justify-between">
+        <p className="block mb-4 text-sm text-center text-text3 md:mb-0">
           2024_
           <Link href="#">Lpscrim</Link>. All Rights Reserved.
         </p>
-        <div className="flex gap-4 text-slate-600 sm:justify-center">
+        <div className="flex gap-4 text-text3 sm:justify-center">
           <Link
             href="#"
             className="block transition-opacity text-inherit hover:opacity-80"
