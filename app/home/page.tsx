@@ -37,12 +37,12 @@ export default function Home() {
         </div>
       </div>
 
-        <div className="inset-0 justify-center  py-20 h-3/5 px-8 bg-gradient-to-r from-primaryd to-primaryh">
+        <div className="inset-0 justify-center  py-20 h-3/5 px-8 bg-gradient-to-r from-primaryd to-primary">
           <div className=" max-w-screen-lg mx-auto ">
             <Expandable className="w-full min-w-72"/>
           </div>
         </div>
-        <div className="relative pb-20 h-auto">
+        <div className="relative pb-20 h-fit">
           <div className="absolute inset-0">
             <Image
               src={workshop1}
@@ -53,7 +53,7 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-black opacity-50"></div>
           </div>
-          <div className="flex flex-row justify-around">
+      <div>
             <div className="max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
               <h1 className="text-3xl font-bold leading-tight mt-4 mb-2">
                 About
@@ -75,18 +75,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/*<div className="hidden lg:flex max-w-screen-lg text-text1 relative rounded-md z-1 flex-col top-8 mx-auto w-1/5 bg-transparent opacity-90 justify-center items-center h-auto text-center">
-              <Image
-                src={workshop1}
-                alt="Background Image"
-                className="object-cover object-center rounded-md"
-                width={500}
-                height={500}
-              />
-            </div>*/}
-          </div>
           <div className="mt-12 pt-6 max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
             <LampSection />
+          </div>
           </div>
         </div>
       </div>

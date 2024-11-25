@@ -15,7 +15,7 @@ export default function DDButton() {
             viewBox="0 0 28 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-4"
+            className="size-5 pt-1 pl-1"
           >
             <path
               strokeLinecap="round"
