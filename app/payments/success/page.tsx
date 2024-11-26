@@ -13,7 +13,9 @@ export default async function PaymentSuccess({
   const id = searchParams.session_id;
 
   console.log("id:", id);
-  let lineItemIds: [] | null;
+  let lineItemIds: {id: string}[] | null;
+
+
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
       apiVersion: "2024-11-20.acacia",
@@ -22,8 +24,11 @@ export default async function PaymentSuccess({
     const session = await stripe.checkout.sessions.retrieve(id);
 
 
-    lineItemIds = session.metadata.ids;
+        //@ts-expect-error - efewf
+        lineItemIds = session.metadata.ids;
+   
 
+        
    
   } catch (error) {
     throw new Error("An error occurred while processing your request.");
