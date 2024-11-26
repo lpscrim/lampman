@@ -1,8 +1,11 @@
+
+
 export default function PaymentFail() {
+
     return (
         <div>
             <p>
-                fail
+                fail 
             </p>
         </div>
     )

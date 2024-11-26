@@ -1,4 +1,3 @@
-
 import Stripe from "stripe";
 
 type Product = Stripe.Product & {
@@ -14,9 +13,15 @@ export default function Checkout({ products }: { products: Product[] }) {
       };
     });
 
+    const ids = products?.map((product) => {
+      return {
+        id : product.id,
+      }
+    })
+
     const res = await fetch("/api/checkout", {
       method: "POST",
-      body: JSON.stringify({ lineItems: lineItems }),
+      body: JSON.stringify({ lineItems: lineItems, ids: ids }),
     });
 
     const b = await res.json();
