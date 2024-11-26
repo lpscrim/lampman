@@ -16,10 +16,10 @@ export default function LampSection() {
             width={500}
             height={500}
           />
-          <div className="absolute inset-0 bg-black opacity-20"></div>
-          <div className="text-logo absolute bottom-0 left-0 right-0 flex justify-between p-4 bg-text3 opacity-90">
-            <h2 className="text-xl font-semibold">Iconic Design</h2>
-            <button className="bg-secondary text-white px-4 py-2 rounded hover:bg-secondaryh">
+          <div className="absolute inset-0 bg-primary opacity-20"></div>
+          <div className="text-primary absolute bottom-0 left-0 right-0 flex justify-between p-4 bg-text3 opacity-90">
+            <h2 className="text-xl font-bold">Iconic Design</h2>
+            <button className="bg-primary text-secondary font-semibold px-4 py-2 rounded hover:bg-primaryh">
               Learn More
             </button>
           </div>

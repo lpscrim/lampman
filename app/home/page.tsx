@@ -4,6 +4,7 @@ import workshop1 from "../../local_images/workshop1.jpg";
 import Expandable from "../_components/animata/carousel/expandable";
 import Link from "next/link";
 import LampSection from "../_components/products/LampSection";
+import AboutSection from "../_components/products/AboutSection"
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold leading-tight mb-4">
             Welcome to LAMPMAN
           </h1>
-          <p className="text-lg text-gray-300 mb-8">
+          <p className="text-lg text-text1 mb-8">
             Discover amazing LAMP and LAMP that await you.
           </p>
           <Link
@@ -54,7 +55,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
         <div id="about">
-          <div className="max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
+          <div className="max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
             <h1 className="text-3xl font-bold leading-tight mt-4 mb-2">
               About
             </h1>
@@ -73,10 +74,13 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="mt-12 pt-6 max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
+          <div className="mt-12 pt-6 max-w-screen-xl text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
+            <AboutSection />
+          </div>
+          <div className="mt-12 pt-6 max-w-screen-xl text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
             <LampSection />
           </div>
+          
         </div>
       </div>
     </div>
