@@ -20,7 +20,7 @@ export default function LampSection() {
           <Image
             src="https://www.londonfine.co.uk/cdn/shop/products/18.7310-1_1024x1024.jpg?v=1614602289"
             alt="1950s vintage lamp"
-            className="w-full h-100 object-cover"
+            className="w-full h-96 object-cover"
             width={500}
             height={500}
           />

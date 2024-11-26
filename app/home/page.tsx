@@ -9,7 +9,7 @@ import AboutSection from "../_components/products/AboutSection"
 export default function Home() {
   return (
     <div className="">
-      <div className="relative bg-gradient-to-r from-primary to-secondary h-screen text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-primary to-secondary h-screen text-text1 overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={hero1}

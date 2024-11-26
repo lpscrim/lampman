@@ -12,7 +12,7 @@ export default function LampSection() {
           <Image
             src="https://www.londonfine.co.uk/cdn/shop/products/18.7310-1_1024x1024.jpg?v=1614602289"
             alt="1950s vintage lamp"
-            className="w-full h-64 object-cover"
+            className="w-full h-80 object-cover"
             width={500}
             height={500}
           />
@@ -32,6 +32,7 @@ export default function LampSection() {
             <li>Symbolize nostalgia and retro appeal</li>
             <li>Influence contemporary lighting design</li>
             <li>Appreciated for their craftsmanship and durability</li>
+            
           </ul>
         </div>
       </div>

@@ -37,7 +37,7 @@ export default function DDButton() {
                 pathname: "/shop",
                 query: { type: "lamps" },
               }}
-              className="text-center block px-4 py-2 bg-text1 text-sm font-bold text-text2 data-[focus]:bg-text1h data-[focus]:outline-none"
+              className="hover:bg-text1h text-center block px-4 py-2 bg-text1 text-sm font-bold text-text2 data-[focus]:bg-text1h data-[focus]:outline-none "
             >
               Lamps
             </Link>
@@ -48,12 +48,12 @@ export default function DDButton() {
                 pathname: "/shop",
                 query: { type: "curios" },
               }}
-              className="text-center block px-4 py-2 bg-text1 text-sm font-bold  text-text2 data-[focus]:bg-text1h data-[focus]:outline-none"
+              className="hover:bg-text1h text-center block px-4 py-2 bg-text1 text-sm font-bold  text-text2 data-[focus]:bg-text1h data-[focus]:outline-none"
             >
               Curios
             </Link>
           </MenuItem>
-        </div>
+        </div>      
       </MenuItems>
     </Menu>
   );
