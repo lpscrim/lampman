@@ -9,7 +9,7 @@ type Product = Stripe.Product & {
 export const revalidate = 60;
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
-  apiVersion: "2024-10-28.acacia",
+  apiVersion: "2024-11-20.acacia",
 });
 
 export default async function ProductPage({

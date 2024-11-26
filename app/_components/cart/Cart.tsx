@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../_context/cart";
 import Image from "next/image";
 import Link from "next/link";
+import Checkout from "../checkout/CheckoutButton";
 
 export default function Cart({
   showModal,
@@ -83,6 +84,7 @@ export default function Cart({
                 >
                   Clear cart
                 </button>
+                <Checkout products={cartItems}/>
               </div>
             ) : (
               <h1 className="text-lg font-bold">Your cart is empty</h1>
