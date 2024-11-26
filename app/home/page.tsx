@@ -3,8 +3,8 @@ import hero1 from "../../local_images/hero1.jpg";
 import workshop1 from "../../local_images/workshop1.jpg";
 import Expandable from "../_components/animata/carousel/expandable";
 import Link from "next/link";
-import LampSection from "../_components/products/LampSection";
-import AboutSection from "../_components/products/AboutSection"
+import LampSection from "../_components/sections/LampSection";
+import AboutSection from "../_components/sections/AboutSection"
 
 export default function Home() {
   return (
