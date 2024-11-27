@@ -28,7 +28,7 @@ export default async function PaymentSuccess({
 }: {
   searchParams?: { [key: string]: string };
 }) {
-  if (!searchParams || !searchParams.session_id) {
+  if (!searchParams || !searchParams.session_id || typeof searchParams !== 'object') {
     throw new Error("No valid session ID provided");
   }
 
