@@ -15,7 +15,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
 export default async function ProductPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   let id: string | undefined;
   let product: Product | null = null;
