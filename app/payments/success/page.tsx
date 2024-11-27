@@ -13,7 +13,8 @@ export default async function PaymentSuccess({
   const id = searchParams.session_id;
 
   console.log("id:", id);
-  let lineItemIds: {id: string}[] | null;
+  let lineItemIds: {id: string}[]  = [];
+  let idsArray: string[] = [];
 
 
   try {
@@ -25,8 +26,9 @@ export default async function PaymentSuccess({
 
 
         //@ts-expect-error - efewf
-        lineItemIds = session.metadata.ids;
-   
+        lineItemIds = JSON.parse(session.metadata.ids);
+        idsArray = lineItemIds.map(item => item.id);
+
 
         
    
@@ -38,7 +40,8 @@ export default async function PaymentSuccess({
     <div>
       <p>success</p>
       <p>{id}</p>
-      <p>{lineItemIds}</p>
+      <p>{String(lineItemIds)}</p>
+      <p>{String(idsArray)}</p>
       <Link href="/">Home</Link>
     </div>
   );
