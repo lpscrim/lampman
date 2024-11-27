@@ -24,7 +24,7 @@ export default function NavBar2() {
 
   return (
   <>
-    <nav className="z-9999 bg-secondary">
+    <nav className="z-[9999] bg-secondary">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link
           href="/"

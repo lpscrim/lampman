@@ -5,7 +5,6 @@ import { CartProvider } from "./_context/cart";
 import Footer from "./_components/footer/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
-import ErrorButton from "./_components/error/TriggerError";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 import Error from "./error";
 

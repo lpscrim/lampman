@@ -9,8 +9,8 @@ import AboutSection from "../_components/sections/AboutSection"
 export default function Home() {
   return (
     <div className="">
-      <div className="relative bg-gradient-to-r from-primary to-secondary h-screen text-text1 overflow-hidden">
-        <div className="absolute inset-0">
+      <div className="z-0 relative bg-gradient-to-r from-primary to-secondary h-screen text-text1 overflow-hidden">
+        <div className="absolute inset-0 ">
           <Image
             src={hero1}
             alt="Background Image"

@@ -2,7 +2,7 @@ import Stripe from "stripe";
 import ShopNav from "@/app/_components/navigation/ShopNav";
 import ProductList from "@/app/_components/products/ProductList";
 import { Suspense } from "react";
-import  Loading  from "../loading"
+import  Loading  from "../loading";
 
 type Product = Stripe.Product & {
   default_price: Stripe.Price;
