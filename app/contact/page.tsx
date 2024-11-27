@@ -1,4 +1,32 @@
+"use client"
+
+
 export default function ContactPage() {
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "8dd2f85a-06a1-479d-ac08-93778f7bddf2");
+
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json"
+            },
+            body: json
+        });
+        const result = await response.json();
+        if (result.success) {
+            console.log(result);
+        }
+    }
+
+    
   return (
     <section className="bg-background h-screen pt-20">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -9,7 +37,24 @@ export default function ContactPage() {
           Got a technical issue? Want to send feedback about a beta feature?
           Need details about our Business plan? Let us know.
         </p>
-        <form onSubmit='' className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
+            
+            <div>
+            <label
+              htmlFor="name"
+              className="block mb-2 text-sm font-medium"
+            >
+              Your name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              className="text-logo shadow-sm bg-secondary border border-text2 text-sm rounded-lg focus:ring-primary-500 placeholder-primary  focus:border-primary-500 block w-full p-2.5 "
+              placeholder="your name"
+            />
+          </div>
           <div>
             <label
               htmlFor="email"
