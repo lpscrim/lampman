@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Stripe from "stripe";
+import ClearCart from "@/app/_components/cart/ClearCart";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
   apiVersion: "2024-11-20.acacia",
@@ -58,6 +59,7 @@ export default async function PaymentSuccess({
       <p>{String(lineItemIds)}</p>
       <p>{String(idsArray)}</p>
       <Link href="/">Home</Link>
+      <ClearCart />
     </div>
   );
 }

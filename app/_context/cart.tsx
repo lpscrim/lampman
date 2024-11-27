@@ -9,7 +9,7 @@ type Product = Stripe.Product & {
   };
 
 
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect, useCallback } from 'react'
 
 type CartContextType = {
   cartItems: Product[];
@@ -52,10 +52,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const clearCart = () => {
+  const clearCart = useCallback(() => {
     setCartItems([]);
     sessionStorage.removeItem("cartItems");
-  };
+  }, []);
 
   const getCartTotal = () => {
     return cartItems.reduce((total, item) => {
