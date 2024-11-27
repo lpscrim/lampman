@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Stripe from "stripe";
 import ClearCart from "@/app/_components/cart/ClearCart";
+interface PageProps {
+  searchParams: {
+    session_id: string;
+  };
+}
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
   apiVersion: "2024-11-20.acacia",
@@ -9,25 +14,19 @@ const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
 async function updateProductInDatabase(productId: string) {
   try {
     await stripe.products.update(productId, {
-     // metadata: {
-     //   stock: "0",
-     // },
-     active: false,
+      // metadata: {
+      //   stock: "0",
+      // },
+      active: false,
     });
     console.log(`Product ${productId} updated successfully`);
-
-    
   } catch (error) {
     console.error(`Error updating product ${productId}:`, error);
     throw new Error(`Failed to update product ${productId}`);
   }
 }
 
-export default async function PaymentSuccess({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string };
-}) {
+export default async function PaymentSuccess({ searchParams }: PageProps) {
   if (!searchParams || !searchParams.session_id) {
     throw new Error("No valid session ID provided");
   }
@@ -47,8 +46,6 @@ export default async function PaymentSuccess({
     for (const productId of idsArray) {
       await updateProductInDatabase(productId);
     }
-
-
   } catch (error) {
     throw new Error("An error occurred while processing your request.");
   }
