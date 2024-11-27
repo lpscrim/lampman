@@ -1,32 +1,30 @@
-"use client"
-
+"use client";
+import { showToast } from "react-next-toast";
 
 export default function ContactPage() {
+    //@ts-expect-error event type 
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target)
+    event.target.reset()
+    
 
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const formData = new FormData(event.target);
+    const response = await fetch("/api/mail", {
+      method: "POST",
+      body: formData,
+    });
 
-        formData.append("access_key", "8dd2f85a-06a1-479d-ac08-93778f7bddf2");
-
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json"
-            },
-            body: json
-        });
-        const result = await response.json();
-        if (result.success) {
-            console.log(result);
-        }
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    
+    const result = await response.json();
+    if (result.success) {
+      console.log(result);
+      showToast.success('Email sent!');
+    }
+  }
+
   return (
     <section className="bg-background h-screen pt-20">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -34,16 +32,12 @@ export default function ContactPage() {
           Contact Us
         </h2>
         <p className="mb-8 lg:mb-16 font-light text-center text-text2h sm:text-xl">
-          Got a technical issue? Want to send feedback about a beta feature?
-          Need details about our Business plan? Let us know.
+          Got a question? Want to send feedback about out products? Need details
+          about a product? Let us know.
         </p>
         <form onSubmit={handleSubmit} className="space-y-8">
-            
-            <div>
-            <label
-              htmlFor="name"
-              className="block mb-2 text-sm font-medium"
-            >
+          <div>
+            <label htmlFor="name" className="block mb-2 text-sm font-medium">
               Your name
             </label>
             <input
@@ -56,10 +50,7 @@ export default function ContactPage() {
             />
           </div>
           <div>
-            <label
-              htmlFor="email"
-              className="block mb-2 text-sm font-medium"
-            >
+            <label htmlFor="email" className="block mb-2 text-sm font-medium">
               Your email
             </label>
             <input
