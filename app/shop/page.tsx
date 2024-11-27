@@ -1,6 +1,7 @@
 import Stripe from "stripe";
 import ShopNav from "@/app/_components/navigation/ShopNav";
 import ProductList from "@/app/_components/products/ProductList";
+import { Suspense } from "react";
 
 type Product = Stripe.Product & {
   default_price: Stripe.Price;
@@ -66,7 +67,9 @@ export default async function Shop({
         Shop
       </p>
       <ShopNav />
-      <ProductList products={products} type={type}/>
+      <Suspense fallback={<p>Loading products...</p>}>
+        <ProductList products={products} type={type}/>
+      </Suspense>
     </div>
   );
 }

@@ -3,7 +3,8 @@ import "./globals.css";
 import NavBar2 from "@/app/_components/navigation/NavBar2";
 import { CartProvider } from "./_context/cart";
 import Footer from "./_components/footer/Footer";
-
+import { Suspense } from "react";
+import Loading from "./loading";
 
 
 export const metadata: Metadata = {
@@ -27,9 +28,11 @@ export default function RootLayout({
       <body className="position-relative bg-background">
         <CartProvider>
           <NavBar2 />
-          <div className="relative">
-            {children}  
-          </div>
+          <Suspense fallback={<Loading />}>
+            <div className="relative">
+              {children}  
+            </div>
+            </Suspense>
         </CartProvider>
         <Footer />
       </body>
