@@ -2,6 +2,7 @@ import Stripe from "stripe";
 import ShopNav from "@/app/_components/navigation/ShopNav";
 import ProductList from "@/app/_components/products/ProductList";
 import { Suspense } from "react";
+import  Loading  from "../loading"
 
 type Product = Stripe.Product & {
   default_price: Stripe.Price;
@@ -63,11 +64,11 @@ export default async function Shop({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-4 lg:max-w-7xl lg:px-2">
-      <p className=" text-center py-4 border-b-2 border-t-2 border-secondary text-3xl font-bold tracking-tight text-text2">
+      <h2 className=" text-center py-4 border-b-2 border-t-2 border-secondary text-3xl font-bold tracking-tight text-text2">
         Shop
-      </p>
+      </h2>
       <ShopNav />
-      <Suspense fallback={<p>Loading products...</p>}>
+      <Suspense fallback={<Loading />}>
         <ProductList products={products} type={type}/>
       </Suspense>
     </div>

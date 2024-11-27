@@ -5,7 +5,9 @@ import { CartProvider } from "./_context/cart";
 import Footer from "./_components/footer/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
-
+import ErrorButton from "./_components/error/TriggerError";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+import Error from "./error";
 
 export const metadata: Metadata = {
   title: "Lampman",
@@ -24,18 +26,22 @@ export default function RootLayout({
 
 }) {
   return (
+    
     <html lang="en">
       <body className="position-relative bg-background">
         <CartProvider>
           <NavBar2 />
-          <Suspense fallback={<Loading />}>
-            <div className="relative">
-              {children}  
-            </div>
+          <ErrorBoundary errorComponent={Error} >
+            <Suspense fallback={<Loading />}>
+              <div className="relative">
+                {children}  
+              </div>
             </Suspense>
-        </CartProvider>
+            </ErrorBoundary>
+          </CartProvider>
         <Footer />
       </body>
     </html>
+   
   );
 }
