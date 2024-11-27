@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Stripe from "stripe";
 import ClearCart from "@/app/_components/cart/ClearCart";
-import { ReadonlyURLSearchParams } from 'next/navigation';
+
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
   apiVersion: "2024-11-20.acacia",
