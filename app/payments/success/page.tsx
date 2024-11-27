@@ -26,9 +26,9 @@ async function updateProductInDatabase(productId: string) {
 export default async function PaymentSuccess({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string };
+  searchParams: { [key: string]: string };
 }) {
-  if (!searchParams || !searchParams.session_id || typeof searchParams !== 'object') {
+  if (!searchParams || !searchParams.session_id) {
     throw new Error("No valid session ID provided");
   }
 
