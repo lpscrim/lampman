@@ -9,9 +9,10 @@ const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
 async function updateProductInDatabase(productId: string) {
   try {
     await stripe.products.update(productId, {
-      metadata: {
-        stock: "0",
-      },
+     // metadata: {
+     //   stock: "0",
+     // },
+     active: false,
     });
     console.log(`Product ${productId} updated successfully`);
 
