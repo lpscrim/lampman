@@ -34,9 +34,14 @@ export default async function ProductPage({
       expand: ["default_price"],
     });
 
+    if (!response.active || !(Number(response.metadata.stock) > 0)) {
+      throw new Error("Product has sold out!")
+    }
+
     if (!response) {
       throw new Error("No products found");
     }
+
 
     product = {
       ...response,

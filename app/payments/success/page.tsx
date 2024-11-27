@@ -1,6 +1,26 @@
 import Link from "next/link";
 import Stripe from "stripe";
 
+const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
+  apiVersion: "2024-11-20.acacia",
+});
+
+async function updateProductInDatabase(productId: string) {
+  try {
+    await stripe.products.update(productId, {
+      metadata: {
+        stock: "0",
+      },
+    });
+    console.log(`Product ${productId} updated successfully`);
+
+    
+  } catch (error) {
+    console.error(`Error updating product ${productId}:`, error);
+    throw new Error(`Failed to update product ${productId}`);
+  }
+}
+
 export default async function PaymentSuccess({
   searchParams,
 }: {
@@ -10,28 +30,23 @@ export default async function PaymentSuccess({
     throw new Error("No valid session ID provided");
   }
 
-  const id = searchParams.session_id;
+  const id = await searchParams.session_id;
 
   console.log("id:", id);
-  let lineItemIds: {id: string}[]  = [];
+  let lineItemIds: { id: string }[] = [];
   let idsArray: string[] = [];
 
-
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
-      apiVersion: "2024-11-20.acacia",
-    });
-
     const session = await stripe.checkout.sessions.retrieve(id);
 
+    session.metadata ? (lineItemIds = JSON.parse(session.metadata.ids)) : "";
+    idsArray = lineItemIds.map((item) => item.id);
 
-        //@ts-expect-error - efewf
-        lineItemIds = JSON.parse(session.metadata.ids);
-        idsArray = lineItemIds.map(item => item.id);
+    for (const productId of idsArray) {
+      await updateProductInDatabase(productId);
+    }
 
 
-        
-   
   } catch (error) {
     throw new Error("An error occurred while processing your request.");
   }
