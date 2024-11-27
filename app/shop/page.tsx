@@ -41,7 +41,7 @@ export default async function Shop({
     let finalProducts = activeProducts.filter((product) => 
       Number(product.metadata.stock) > 0
     );
-    //filtering logic
+    
 
     if (type === 'lamps') {
       finalProducts = finalProducts.filter((product) => product.metadata.type === 'lamp')
