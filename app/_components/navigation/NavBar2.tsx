@@ -43,7 +43,7 @@ export default function NavBar2() {
           </Link>
           <DDButton />
           <Link
-            href="#"
+            href="/contact"
             className="text-text1 hidden sm:block font-bold hover:text-text1h"
           >
             <svg
