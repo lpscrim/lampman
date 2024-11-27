@@ -12,5 +12,4 @@ export default function ClearCart() {
     clearCart();
   }, [clearCart]);
 
-  return null; // Return nothing, as we don't need UI for this component
-}
+  return null; 
