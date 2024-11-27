@@ -27,13 +27,13 @@ async function updateProductInDatabase(productId: string) {
 export default async function PaymentSuccess({
   searchParams,
 }: {
-  searchParams?:  { [key: string]: string };
+  searchParams?:  Promise<{session_id: string}>;
 }) {
-  if (!searchParams || !searchParams.session_id) {
+  if (!searchParams || !(await searchParams).session_id) {
     throw new Error("No valid session ID provided");
   }
 
-  const id = await searchParams.session_id;
+  const id =  (await searchParams).session_id;
 
   console.log("id:", id);
   let lineItemIds: { id: string }[] = [];
