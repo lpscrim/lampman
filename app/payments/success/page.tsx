@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Stripe from "stripe";
 import ClearCart from "@/app/_components/cart/ClearCart";
+import type { SearchParams } from "next/dist/server/request/search-params";
 
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
@@ -27,7 +28,7 @@ async function updateProductInDatabase(productId: string) {
 export default async function PaymentSuccess({
   searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined};
+  searchParams?: SearchParams;
 }) {
   if (!searchParams || !searchParams.session_id) {
     throw new Error("No valid session ID provided");
@@ -40,7 +41,7 @@ export default async function PaymentSuccess({
   let idsArray: string[] = [];
 
   try {
-    const session = await stripe.checkout.sessions.retrieve(id);
+    const session = await stripe.checkout.sessions.retrieve(String(id));
 
     session.metadata ? (lineItemIds = JSON.parse(session.metadata.ids)) : "";
     idsArray = lineItemIds.map((item) => item.id);
