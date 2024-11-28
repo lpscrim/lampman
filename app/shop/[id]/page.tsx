@@ -23,7 +23,7 @@ export default async function ProductPage({
 
   if (urlInfo) {
     id = urlInfo.id;
-    console.log("type:", id);
+    //console.log("type:", id);
   }
   try {
     if (!id) {

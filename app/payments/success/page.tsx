@@ -2,6 +2,7 @@ import Link from "next/link";
 import Stripe from "stripe";
 import ClearCart from "@/app/_components/cart/ClearCart";
 
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
   apiVersion: "2024-11-20.acacia",
@@ -24,16 +25,17 @@ async function updateProductInDatabase(productId: string) {
   }
 }
 
-export default async function PaymentSuccess({
-  searchParams,
-}: {
-  searchParams?: Promise<{ [key: string]: string }>
+export default async function PaymentSuccess(props: {
+  searchParams : SearchParams
 }) {
-  if (!searchParams || !(await searchParams).session_id) {
+
+  const searchParams = await props.searchParams
+
+  if (!searchParams || !searchParams.session_id) {
     throw new Error("No valid session ID provided");
   }
 
-  const id =  (await searchParams).session_id;
+  const id =  searchParams.session_id;
 
   console.log("id:", id);
   let lineItemIds: { id: string }[] = [];
