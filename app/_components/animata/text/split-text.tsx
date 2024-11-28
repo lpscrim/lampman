@@ -16,11 +16,10 @@ export default function SplitText({
   return (
     <div
       className={cn(
-        "relative mx-auto text-2xl font-black uppercase text-logo md:text-3xl lg:text-4xl",
+        "relative mx-auto font-black uppercase text-logo  text-md sm:text-xl md:text-3xl lg:text-4xl",
       )}
     >
-      {/** add hidden text so that we maintain the size for any text */}
-      <div className="invisible leading-none">{text}</div>
+    <div className="invisible leading-none">{text}</div>
       <div className="absolute top-0 flex h-full">
         {text.split("").map((letter, index) => (
           <div

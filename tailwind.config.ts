@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'xsm': '400px',
+        'xxsm' : '375px'
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

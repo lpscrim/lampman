@@ -30,23 +30,21 @@ export default function NavBar2() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image src={bulb} alt="Logo" width={30} />
-          <div className="hidden min-[450px]:flex">
-            <SplitText text="LAMPMAN" />
-          </div>
+          <Image className="hidden xsm:block"src={bulb} alt="Logo" width={30} />
+          <SplitText text="LAMPMAN" />
         </Link>
 
-        <div className=" flex space-x-6 rtl:space-x-reverse">
+        <div className=" flex space-x-6 rtl:space-x-reverse ">
           <Link href="/" className="text-text1 font-bold hover:text-text1h">
-            Home
-          </Link>
+              Home
+            </Link>
           <Link href="/home#about" className="text-text1 font-bold hover:text-text1h hidden sm:block">
             About
           </Link>
           <DDButton />
           <Link
             href="/contact"
-            className="text-text1 font-bold hover:text-text1h"
+            className="text-text1 font-bold hover:text-text1h hidden xxsm:block"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
