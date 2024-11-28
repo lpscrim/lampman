@@ -42,7 +42,7 @@ export default async function PaymentSuccess(props: {
   let lineItemIds: { id: string }[] = [];
   let idsArray: string[] = [];
   let amount: number | null;
-  let email: string | null;
+  let email: string | null | undefined;
   let customerId: string | null;
   let address: Address | undefined;
   let created: number | undefined;
@@ -59,7 +59,6 @@ export default async function PaymentSuccess(props: {
     idsArray = lineItemIds.map((item) => item.id);
 
     amount = session.amount_total;
-    email = session.customer_email;
     customerId = String(session.customer);
     address = session.shipping_details?.address;
     created = session.created;
@@ -67,6 +66,7 @@ export default async function PaymentSuccess(props: {
     invoice = session?.invoice ? (typeof session.invoice === 'string' ? null : session.invoice) : null;
     invoiceNum = invoice?.number;
     invoiceName = invoice?.customer_name;
+    email = invoice?.customer_email;
     
 
     for (const productId of idsArray) {
