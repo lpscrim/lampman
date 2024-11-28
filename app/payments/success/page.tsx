@@ -9,6 +9,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
 });
 
 type Address = Stripe.Address;
+type Invoice = Stripe.Invoice;
 
 async function updateProductInDatabase(productId: string) {
   try {
@@ -44,9 +45,10 @@ export default async function PaymentSuccess(props: {
   let customerId: string | null;
   let address: Address | undefined;
   let created: number | undefined;
+  let invoice: string | Invoice | null;
 
   try {
-    const session = await stripe.checkout.sessions.retrieve(String(id));
+    const session = await stripe.checkout.sessions.retrieve(String(id), {expand:['invoice']});
 
     session.metadata ? (lineItemIds = JSON.parse(session.metadata.ids)) : "";
     idsArray = lineItemIds.map((item) => item.id);
@@ -56,6 +58,7 @@ export default async function PaymentSuccess(props: {
     customerId = String(session.customer);
     address = session.shipping_details?.address;
     created = session.created;
+    invoice = session?.invoice ? (typeof session.invoice === 'string' ? null : session.invoice.number) : null;
 
     for (const productId of idsArray) {
       await updateProductInDatabase(productId);
@@ -76,7 +79,7 @@ export default async function PaymentSuccess(props: {
             Thanks for your order!
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-6 md:mb-8">
-            Your order{" "} {id}  {" "}
+            Your order{" "} <span className="text-logo">{String(invoice)}</span> {" "}
             
             will be processed within 24 hours during working days. We will
             notify you by email once your order has been shipped.
