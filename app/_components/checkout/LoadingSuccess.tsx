@@ -9,18 +9,18 @@ export default function LoadingSuccess() {
   useEffect(() => {
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
 
+
     const handleRefresh = () => {
       router.refresh();
     };
 
-    // Use setTimeout only on client-side
     if (typeof window !== "undefined") {
-      timeoutId = setTimeout(handleRefresh, 2000);
-    }
+        timeoutId = setTimeout(handleRefresh, 2000);
+  
+        return () => clearTimeout(timeoutId!);
+      }
 
-    return () => {
-      clearTimeout(timeoutId!);
-    };
+    
   }, [router]);
 
   return (
