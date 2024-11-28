@@ -12,21 +12,27 @@ export default function LoadingSuccess() {
 
     const handleRefresh = () => {
       router.refresh();
+      if (typeof window !== "undefined") {
+        timeoutId = setTimeout(handleRefresh, 1000);
+      }
     };
 
     if (typeof window !== "undefined") {
-        timeoutId = setTimeout(handleRefresh, 2000);
-  
-        return () => clearTimeout(timeoutId!);
+        timeoutId = setTimeout(handleRefresh, 1000);
+
       }
+
+      return () => clearTimeout(timeoutId!);
 
     
   }, [router]);
 
   return (
     <div>
-      <div className="w-full h-screen justify-center items-center">
-        <div role="status" className="py-96 mx-auto  w-fit">
+      <div className="w-full h-screen justify-center items-center text-center pt-20 px-20">
+      <h2 className='text-4xl font-semibold mb-4'>Creating Invoice</h2>
+      <p className="text-xl font-semibold mb-10" >Please wait...</p>
+        <div role="status" className="py-44 mx-auto  w-fit">
           <svg
             aria-hidden="true"
             className="w-16 h-16 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
