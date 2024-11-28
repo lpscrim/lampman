@@ -41,9 +41,9 @@ export default async function PaymentSuccess(props: {
   let idsArray: string[] = [];
   let amount: number | null;
   let email: string | null;
-  let payment: string[];
   let customerId: string | null;
   let address: Address | undefined;
+  let created: number | undefined;
 
   try {
     const session = await stripe.checkout.sessions.retrieve(String(id));
@@ -53,9 +53,9 @@ export default async function PaymentSuccess(props: {
 
     amount = session.amount_total;
     email = session.customer_email;
-    payment = session.payment_method_types;
     customerId = String(session.customer);
     address = session.shipping_details?.address;
+    created = session.created;
 
     for (const productId of idsArray) {
       await updateProductInDatabase(productId);
@@ -65,9 +65,8 @@ export default async function PaymentSuccess(props: {
   }
 
   console.log(String(idsArray) + String(lineItemIds) + id);
-
-  const date = new Date()
-  
+  const date = new Date(created * 1000).toLocaleDateString('EN-UK')
+ 
 
   return (
     <div>
@@ -77,31 +76,23 @@ export default async function PaymentSuccess(props: {
             Thanks for your order!
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-6 md:mb-8">
-            Your order{" "}
-            {id}
+            Your order{" "} {id}  {" "}
+            
             will be processed within 24 hours during working days. We will
             notify you by email once your order has been shipped.
           </p>
           <div className="space-y-4 sm:space-y-2 rounded-lg border border-gray-100 bg-gray-50 p-6 dark:border-gray-700 dark:bg-gray-800 mb-6 md:mb-8">
             <dl className="sm:flex items-center justify-between gap-4">
               <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
-                Date
+                Date of order
               </dt>
               <dd className="font-medium text-gray-900 dark:text-white sm:text-end">
-                {String(date)}
+                {date}
               </dd>
             </dl>
             <dl className="sm:flex items-center justify-between gap-4">
               <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
-                Payment Method
-              </dt>
-              <dd className="font-medium text-gray-900 dark:text-white sm:text-end">
-                {payment.toString()}
-              </dd>
-            </dl>
-            <dl className="sm:flex items-center justify-between gap-4">
-              <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
-                customer ID
+                Customer ID
               </dt>
               <dd className="font-medium text-gray-900 dark:text-white sm:text-end">
                 {customerId}
@@ -111,8 +102,12 @@ export default async function PaymentSuccess(props: {
               <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
                 Address
               </dt>
-              <dd className="font-medium text-gray-900 dark:text-white sm:text-end">
-                {JSON.stringify(address)}
+              <dd className="font-medium py-4 text-gray-900 dark:text-white sm:text-end">
+                {address?.line1}<br></br>
+                {address?.line2}<br></br>
+                {address?.city}<br></br>
+                {address?.postal_code}<br></br>
+                {address?.country}
               </dd>
             </dl>
             <dl className="sm:flex items-center justify-between gap-4">
