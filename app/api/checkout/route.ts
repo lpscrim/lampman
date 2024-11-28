@@ -17,8 +17,8 @@ export async function POST(request: Request): Promise<Response> {
     const idsString = JSON.stringify(body.ids);
 
     const session = await stripe.checkout.sessions.create({
-      success_url: 'http://localhost:3000/payments/success?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: 'http://localhost:3000/payments/cancel',
+      success_url: '/payments/success?session_id={CHECKOUT_SESSION_ID}',
+      cancel_url: '/payments/cancel',
       line_items: body.lineItems,
       mode: 'payment',
       metadata: {
