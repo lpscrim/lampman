@@ -63,7 +63,7 @@ export default async function PaymentSuccess(props: {
     address = session.shipping_details?.address;
     created = session.created;
     paymentId = session.payment_intent;
-    invoice = session?.invoice ? (typeof session.invoice === 'string' ? null : session.invoice) : null;
+    invoice =  session?.invoice ? (typeof session.invoice === 'string' ? null : session.invoice) : null;
     invoiceNum = invoice?.number;
     invoiceName = invoice?.customer_name;
     email = invoice?.customer_email;
@@ -72,9 +72,18 @@ export default async function PaymentSuccess(props: {
     for (const productId of idsArray) {
       await updateProductInDatabase(productId);
     }
+    
   } catch (error) {
     throw new Error("An error occurred while processing your request.");
   }
+
+  const invoiceDetails = {
+    invoiceNum,
+    invoiceName,
+    email,
+    address,
+    amount
+  };
 
   console.log(String(idsArray) + String(lineItemIds) + id);
   const date = new Date(created * 1000).toLocaleDateString('EN-UK')
@@ -88,7 +97,7 @@ export default async function PaymentSuccess(props: {
             Thanks for your order!
           </h2>
           <p className="text-text1h mb-6 md:mb-8">
-            Your order{" "} <span className="text-logo">{String(invoiceNum)}</span> {" "}
+            Your order{" "} <span className="text-logo">{String(invoiceDetails.invoiceNum)}</span> {" "}
             
             will be processed within 24 hours during working days. We will
             notify you by email once your order has been shipped.
@@ -123,7 +132,7 @@ export default async function PaymentSuccess(props: {
                 Customer Name
               </dt>
               <dd className="capitalize font-medium text-text1 sm:text-end">
-                {invoiceName}
+                {invoiceDetails.invoiceName}
               </dd>
             </dl>
             <dl className="sm:flex items-center justify-between gap-4">
@@ -131,11 +140,11 @@ export default async function PaymentSuccess(props: {
                 Address
               </dt>
               <dd className="font-medium py-4 text-text1 sm:text-end">
-                {address?.line1}<br></br>
-                {address?.line2}<br></br>
-                {address?.city}<br></br>
-                {address?.postal_code}<br></br>
-                {address?.country}
+                {invoiceDetails.address?.line1}<br></br>
+                {invoiceDetails.address?.line2}<br></br>
+                {invoiceDetails.address?.city}<br></br>
+                {invoiceDetails.address?.postal_code}<br></br>
+                {invoiceDetails.address?.country}
               </dd>
             </dl>
             <dl className="sm:flex items-center justify-between gap-4">
@@ -143,7 +152,7 @@ export default async function PaymentSuccess(props: {
                 Email
               </dt>
               <dd className="font-medium text-text1 sm:text-end">
-                {String(email)}
+                {String(invoiceDetails.email)}
               </dd>
             </dl>
             <dl className="sm:flex items-center py-8 justify-between gap-4">
@@ -151,7 +160,7 @@ export default async function PaymentSuccess(props: {
                 Total
               </dt>
               <dd className="font-medium text-text1 sm:text-end">
-                £{amount ? Math.round(amount/ 100 ).toFixed(2) : ''}
+                £{invoiceDetails.amount ? Math.round(invoiceDetails.amount/ 100 ).toFixed(2) : ''}
               </dd>
             </dl>
           </div>
