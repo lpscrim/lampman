@@ -38,13 +38,13 @@ export default function NavBar2() {
           <Link href="/" className="text-text1 font-bold hover:text-text1h">
             Home
           </Link>
-          <Link href="/home#about" className="text-text1 font-bold hover:text-text1h">
+          <Link href="/home#about" className="text-text1 font-bold hover:text-text1h hidden sm:block">
             About
           </Link>
           <DDButton />
           <Link
             href="/contact"
-            className="text-text1 hidden sm:block font-bold hover:text-text1h"
+            className="text-text1 font-bold hover:text-text1h"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

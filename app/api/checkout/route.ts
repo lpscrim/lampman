@@ -24,6 +24,9 @@ export async function POST(request: Request): Promise<Response> {
       metadata: {
         'ids': idsString,
       },
+      billing_address_collection: 'required',
+      invoice_creation: {'enabled': true,},
+      shipping_address_collection: { 'allowed_countries': ['GB']}
       
     });
 

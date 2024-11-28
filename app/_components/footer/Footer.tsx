@@ -9,7 +9,7 @@ export default function Footer() {
       <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
         <li>
           <Link
-            href="#"
+            href="/home#about"
             className="text-primary hover:text-primaryh focus:text-primaryh text-sm"
           >
             About Us
@@ -25,7 +25,7 @@ export default function Footer() {
         </li>
         <li>
           <Link
-            href="#"
+            href="/contact"
             className="text-primary hover:text-primaryh focus:text-primaryh text-sm"
           >
             Contact Us
