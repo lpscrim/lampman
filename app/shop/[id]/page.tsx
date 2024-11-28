@@ -8,14 +8,15 @@ type Product = Stripe.Product & {
 
 export const revalidate = 60;
 
+const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
+  apiVersion: "2024-11-20.acacia",
+});
+
 export default async function ProductPage({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
-    apiVersion: "2024-11-20.acacia",
-  });
   let id: string | undefined;
   let product: Product | null = null;
   const urlInfo = (await params) || {};
@@ -34,12 +35,13 @@ export default async function ProductPage({
     });
 
     if (!response.active || !(Number(response.metadata.stock) > 0)) {
-      throw new Error("Product has sold out!");
+      throw new Error("Product has sold out!")
     }
 
     if (!response) {
       throw new Error("No products found");
     }
+
 
     product = {
       ...response,
@@ -138,6 +140,7 @@ export default async function ProductPage({
                 <p className="capitalize text-sm leading-none text-text2">
                   {product.metadata.size}
                 </p>
+                
               </div>
             </div>
             <div className="py-4 border-b border-text1 flex items-center justify-between">
@@ -151,9 +154,9 @@ export default async function ProductPage({
                       ).toFixed(2)
                     : "N/A"}
                 </p>
-              </div>
+                </div>
             </div>
-            <AddButton text={"Add to Basket"} product={product} />
+            <AddButton text={"Add to Basket"} product={product}/>
             <div>
               <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-text2h mt-7">
                 {product.description}
@@ -189,7 +192,9 @@ export default async function ProductPage({
             <div>
               <div className="border-b py-4 border-text1">
                 <div className="flex justify-between items-center cursor-pointer">
-                  <p className="text-base leading-4 text-text2">Contact us</p>
+                  <p className="text-base leading-4 text-text2">
+                    Contact us
+                  </p>
                 </div>
                 <div
                   className={

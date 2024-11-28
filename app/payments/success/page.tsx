@@ -6,16 +6,13 @@ import IncompletePage from "@/app/_components/checkout/LoadingSuccess";
 
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-
+const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
+  apiVersion: "2024-11-20.acacia",
+});
 
 
 
 async function updateProductInDatabase(productId: string) {
-
-  const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
-    apiVersion: "2024-11-20.acacia",
-  });
-  
   try {
     await stripe.products.update(productId, {
       // metadata: {
@@ -33,11 +30,6 @@ async function updateProductInDatabase(productId: string) {
 export default async function PaymentSuccess(props: {
   searchParams: SearchParams;
 }) {
-
-  const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
-    apiVersion: "2024-11-20.acacia",
-  });
-
   const searchParams = await props.searchParams;
 
   if (!searchParams || !searchParams.session_id) {

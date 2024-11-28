@@ -11,17 +11,20 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export const revalidate = 60;
 
+const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
+  apiVersion: "2024-11-20.acacia",
+});
+
 export default async function Shop(props: { searchParams: SearchParams }) {
-  const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
-    apiVersion: "2024-11-20.acacia",
-  });
   let products: Product[] = [];
-  let type: string | string[] | undefined = "";
+  let type: string | string[] | undefined = '';
 
   const searchParams = await props.searchParams;
 
-  searchParams ? (type = searchParams.type) : (type = "");
-  console.log("type:", type);
+  
+    searchParams ? type = searchParams.type : type = '';
+    console.log("type:", type);
+ 
 
   try {
     const response = await stripe.products.list({
