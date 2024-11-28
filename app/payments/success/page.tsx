@@ -10,6 +10,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
 
 type Address = Stripe.Address;
 type Invoice = Stripe.Invoice;
+type PaymentIntent = Stripe.PaymentIntent; 
 
 async function updateProductInDatabase(productId: string) {
   try {
@@ -45,7 +46,11 @@ export default async function PaymentSuccess(props: {
   let customerId: string | null;
   let address: Address | undefined;
   let created: number | undefined;
+  let paymentId: string | PaymentIntent | null;
   let invoice: string | Invoice | null;
+  let invoiceNum: string | null | undefined;
+  let invoiceName: string | null | undefined;
+ 
 
   try {
     const session = await stripe.checkout.sessions.retrieve(String(id), {expand:['invoice']});
@@ -58,7 +63,11 @@ export default async function PaymentSuccess(props: {
     customerId = String(session.customer);
     address = session.shipping_details?.address;
     created = session.created;
-    invoice = session?.invoice ? (typeof session.invoice === 'string' ? null : session.invoice.number) : null;
+    paymentId = session.payment_intent;
+    invoice = session?.invoice ? (typeof session.invoice === 'string' ? null : session.invoice) : null;
+    invoiceNum = invoice?.number;
+    invoiceName = invoice?.customer_name;
+    
 
     for (const productId of idsArray) {
       await updateProductInDatabase(productId);
@@ -79,7 +88,7 @@ export default async function PaymentSuccess(props: {
             Thanks for your order!
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mb-6 md:mb-8">
-            Your order{" "} <span className="text-logo">{String(invoice)}</span> {" "}
+            Your order{" "} <span className="text-logo">{String(invoiceNum)}</span> {" "}
             
             will be processed within 24 hours during working days. We will
             notify you by email once your order has been shipped.
@@ -103,6 +112,22 @@ export default async function PaymentSuccess(props: {
             </dl>
             <dl className="sm:flex items-center justify-between gap-4">
               <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
+                Payment ID
+              </dt>
+              <dd className="font-medium text-gray-900 dark:text-white sm:text-end">
+                {String(paymentId)}
+              </dd>
+            </dl>
+            <dl className="sm:flex pt-8 items-center justify-between gap-4">
+              <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
+                Customer Name
+              </dt>
+              <dd className="capitalize font-medium text-gray-900 dark:text-white sm:text-end">
+                {invoiceName}
+              </dd>
+            </dl>
+            <dl className="sm:flex items-center justify-between gap-4">
+              <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
                 Address
               </dt>
               <dd className="font-medium py-4 text-gray-900 dark:text-white sm:text-end">
@@ -121,12 +146,12 @@ export default async function PaymentSuccess(props: {
                 {String(email)}
               </dd>
             </dl>
-            <dl className="sm:flex items-center justify-between gap-4">
+            <dl className="sm:flex items-center py-8 justify-between gap-4">
               <dt className="font-normal mb-1 sm:mb-0 text-gray-500 dark:text-gray-400">
                 Total
               </dt>
               <dd className="font-medium text-gray-900 dark:text-white sm:text-end">
-                {amount}
+                £{amount ? Math.round(amount/ 100 ).toFixed(2) : ''}
               </dd>
             </dl>
           </div>
