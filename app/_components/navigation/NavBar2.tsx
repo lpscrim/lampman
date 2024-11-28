@@ -31,7 +31,9 @@ export default function NavBar2() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image src={bulb} alt="Logo" width={30} />
-          <SplitText text="LAMPMAN" />
+          <div className="hidden min-[450px]:flex">
+            <SplitText text="LAMPMAN" />
+          </div>
         </Link>
 
         <div className=" flex space-x-6 rtl:space-x-reverse">
