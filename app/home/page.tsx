@@ -52,6 +52,7 @@ export default function Home() {
             className="object-cover object-center w-full h-full blur-sm"
             width={250}
             height={250}
+            priority={false}
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
