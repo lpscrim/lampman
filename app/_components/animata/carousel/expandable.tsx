@@ -122,6 +122,14 @@ export default function Expandable({ list = items, autoPlay = true, className }:
           onMouseLeave={() => {
             setIsHovering(false);
           }}
+          onTouchStart={() => {
+            setActiveItem(index);
+            setIsHovering(true);
+          }}
+          onTouchEnd={() => {
+            setIsHovering(false);
+          }
+          }
         />
       ))}
     </div>
