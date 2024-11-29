@@ -60,16 +60,16 @@ export default async function ProductPage({
               <Image
                 alt={`Product ${product.id}`}
                 src={product.images[0]}
-                className="rounded-md h-auto object-center "
-                width={600}
-                height={600}
+                className="rounded-md object-center"
+                width={512}
+                height={342}
               />
             ) : null}
             {product.metadata.img1 ? (
               <Image
                 alt={`Product ${product.metadata.img1}`}
                 src={product.metadata.img1}
-                className="rounded-md h-auto object-center "
+                className="rounded-md object-center "
                 width={600}
                 height={600}
               />
