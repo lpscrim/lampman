@@ -21,7 +21,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
     <div
       className={cn(
-        "relative flex h-full w-1/6 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
+        " -webkit-touch-callout-none relative flex h-full w-1/6 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
         {
           "flex-grow": index === activeItem,
         },
