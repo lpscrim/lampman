@@ -18,6 +18,7 @@ export default function Home() {
             width={500}
             height={500}
             placeholder="blur"
+            priority
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
