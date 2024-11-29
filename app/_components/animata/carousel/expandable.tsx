@@ -102,7 +102,7 @@ export default function Expandable({ list = items, autoPlay = true, className }:
       if (!isHovering) {
         setActiveItem((prev) => (prev + 1) % list.length);
       }
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [autoPlay, list.length, isHovering]);
