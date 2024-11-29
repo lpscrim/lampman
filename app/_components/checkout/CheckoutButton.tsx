@@ -31,7 +31,7 @@ export default function Checkout({ products }: { products: Product[] }) {
   return (
     <>
       <button
-        className="px-4 py-2 bg-secondary text-primary text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
+        className="px-4 py-3 bg-secondary text-primary text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
         onClick={checkout}
       >
         Checkout

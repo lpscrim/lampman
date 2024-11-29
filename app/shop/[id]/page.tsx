@@ -63,6 +63,7 @@ export default async function ProductPage({
                 className="rounded-md object-center"
                 width={512}
                 height={342}
+                priority
               />
             ) : null}
             {product.metadata.img1 ? (
@@ -70,8 +71,9 @@ export default async function ProductPage({
                 alt={`Product ${product.metadata.img1}`}
                 src={product.metadata.img1}
                 className="rounded-md object-center "
-                width={600}
-                height={600}
+                width={512}
+                height={682.5}
+                priority
               />
             ) : null}
           </div>
@@ -117,7 +119,7 @@ export default async function ProductPage({
           </div>
           <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
             <div className="border-b border-text1 pb-6">
-              <p className="capitalize text-sm leading-none text-text3">
+              <p className="capitalize text-sm leading-none text-text3h">
                 {product.metadata.type} collection
               </p>
               <h1
