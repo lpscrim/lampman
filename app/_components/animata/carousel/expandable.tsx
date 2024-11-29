@@ -36,8 +36,8 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
         className={cn("h-full w-full object-cover", {
           "blur-[2px]  ": index !== activeItem,
         })}
-        width={500}
-        height={500}
+        width={300}
+        height={300}
       />
     
       {index === activeItem && (
