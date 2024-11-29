@@ -15,9 +15,10 @@ export default function Home() {
             src={hero1}
             alt="Background Image"
             className="object-cover object-center w-full h-full"
-            width={1000}
-            height={1000}
+            width={500}
+            height={500}
             priority
+            
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
@@ -49,8 +50,8 @@ export default function Home() {
             src={workshop1}
             alt="Background Image"
             className="object-cover object-center w-full h-full blur-sm"
-            width={8000}
-            height={8000}
+            width={500}
+            height={500}
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
