@@ -48,7 +48,7 @@ export default function Cart({
                       <Image
                         src={item.images[0]}
                         alt={item.name}
-                        className="rounded-md "
+                        className="rounded-md"
                         width={100}
                         height={100}
                       />
@@ -64,9 +64,9 @@ export default function Cart({
                               ).toFixed(2)
                             : "NA"}
                         </p>
-                        <div className="flex sm:hidden gap-4 mx-auto ">
+                        <div className="flex pt-2 sm:hidden gap-4 ">
                           <button
-                            className="ml-8 px-1 sm:px-2 py-0 sm:py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
+                            className="mx-auto px-2 py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
                             onClick={() => {
                               removeFromCart(item);
                             }}
