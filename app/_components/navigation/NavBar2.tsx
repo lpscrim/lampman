@@ -45,6 +45,7 @@ export default function NavBar2() {
           <Link
             href="/contact"
             className="text-text1 font-bold hover:text-text1h hidden xsm:block"
+            aria-label="contacts"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -64,6 +65,7 @@ export default function NavBar2() {
           <button
               onClick={toggle}
               className="space-x-1 flex text-primary font-bold hover:text-primaryh"
+              aria-label="shopping cart"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
