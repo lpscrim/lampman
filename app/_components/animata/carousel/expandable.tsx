@@ -21,7 +21,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
   return (
     <div
       className={cn(
-        " -webkit-touch-callout-none relative flex h-full w-1/6 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
+        " relative flex h-full w-1/6 min-w-10 cursor-pointer overflow-hidden rounded-md transition-all delay-0 duration-300 ease-in-out",
         {
           "flex-grow": index === activeItem,
         },
@@ -108,7 +108,7 @@ export default function Expandable({ list = items, autoPlay = true, className }:
   }, [autoPlay, list.length, isHovering]);
 
   return (
-    <div className={cn("flex h-96 w-full gap-1", className)}>
+    <div style={{ WebkitTouchCallout: 'none' }} className={cn(" flex h-96 w-full gap-1", className)} >
       {list.map((item, index) => (
         <List
           key={item.title}
