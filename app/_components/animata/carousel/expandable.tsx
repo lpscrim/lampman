@@ -34,10 +34,10 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
         src={item.image}
         alt="carousel link"
         className={cn("h-full w-full object-cover", {
-          "blur-[2px] ": index !== activeItem,
+          "blur-[2px]  ": index !== activeItem,
         })}
-        width={1000}
-        height={1000}
+        width={500}
+        height={500}
       />
     
       {index === activeItem && (

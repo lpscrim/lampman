@@ -50,8 +50,8 @@ export default function Home() {
             src={workshop1}
             alt="Background Image"
             className="object-cover object-center w-full h-full blur-sm"
-            width={500}
-            height={500}
+            width={250}
+            height={250}
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
