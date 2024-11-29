@@ -8,14 +8,14 @@ export default function DDButton() {
         <Link href="/shop">
           <span className="inline-flex">Shop</span>
         </Link>
-        <MenuButton className="inline-flex">
+        <MenuButton aria-label="Open menu" className="inline-flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 28 24"
-            strokeWidth={1.5}
+            strokeWidth={3}
             stroke="currentColor"
-            className="size-5 pt-1 pl-1"
+            className="size-6 pl-2"
           >
             <path
               strokeLinecap="round"

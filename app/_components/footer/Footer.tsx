@@ -33,13 +33,14 @@ export default function Footer() {
         </li>
       </ul>
       <div className=" flex flex-col items-center justify-center w-full pt-2 px-2 border-t border-secondary md:flex-row md:justify-between">
-        <p className="block mb-4 text-sm text-center text-text3 md:mb-0">
+        <p className="block mb-4 text-sm text-center text-text1h md:mb-0">
           2024_
           <Link href="#">Lpscrim</Link>. All Rights Reserved.
         </p>
         <div className="flex gap-4 text-text3 sm:justify-center">
           <Link
             href="#"
+            aria-label="facebook link"
             className="block transition-opacity text-inherit hover:opacity-80"
           >
             <svg
@@ -57,6 +58,8 @@ export default function Footer() {
           </Link>
           <Link
             href="#"
+            aria-label="instagram link"
+
             className="block transition-opacity text-inherit hover:opacity-80"
           >
             <svg
@@ -74,6 +77,7 @@ export default function Footer() {
           </Link>
           <Link
             href="#"
+            aria-label="github link"
             className="block transition-opacity text-inherit hover:opacity-80"
           >
             <svg

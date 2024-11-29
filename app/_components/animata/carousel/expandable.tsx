@@ -32,7 +32,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
     <Link href={item.link}>
       <Image
         src={item.image}
-        alt={item.title}
+        alt="carousel link"
         className={cn("h-full w-full object-cover", {
           "blur-[2px] ": index !== activeItem,
         })}
