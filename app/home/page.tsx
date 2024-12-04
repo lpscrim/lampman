@@ -41,7 +41,7 @@ export default function Home() {
       <div className="inset-0 justify-center  py-20 h-3/5 px-8 bg-gradient-to-r from-primaryd to-primary">
         <div className=" max-w-screen-lg mx-auto ">
           <Suspense fallback={<p>Loading</p>}>
-            <Expandable className="w-full min-w-72" />
+            <Expandable/>
           </Suspense>
         </div>
       </div>
