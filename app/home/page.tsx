@@ -19,7 +19,7 @@ export default function Home() {
             fill
             quality={80}
             priority
-          />
+           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
 
@@ -52,10 +52,10 @@ export default function Home() {
             <Image
               src={background}
               alt="Background Image"
-              className="object-cover object-center w-auto h-full blur-sm"
+              className="object-cover object-center blur-sm"
               quality={20}
-              placeholder="blur"
-            />
+              fill
+             />
             <div className="absolute inset-0 bg-black opacity-50"></div>
           </div>
           <div id="about">
