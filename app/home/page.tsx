@@ -4,8 +4,8 @@ import Link from "next/link";
 import LampSection from "../_components/sections/LampSection";
 import AboutSection from "../_components/sections/AboutSection";
 import { Suspense } from "react";
-import hero1 from "../../public/hero1.webp";
 import background from "../../public/workshop1.webp";
+import hero1 from "../../public/hero1.webp";
 
 export default function Home() {
   return (
@@ -15,11 +15,10 @@ export default function Home() {
           <Image
             src={hero1}
             alt="Background Image"
-            className="object-cover object-center w-auto h-full"
+            className="object-cover object-center w-full h-full"
             height={408}
             width={728}
             quality={80}
-            priority
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>

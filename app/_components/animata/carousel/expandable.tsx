@@ -33,7 +33,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
       <Image
         src={item.image}
         alt="carousel link"
-        className={cn("h-full w-full object-cover", {
+        className={cn("h-full w-auto object-cover", {
           "blur-[2px]  ": index !== activeItem,
         })}
         width={500}
