@@ -21,8 +21,7 @@ export default function LampSection() {
             src="https://www.londonfine.co.uk/cdn/shop/products/18.7310-1_1024x1024.jpg?v=1614602289"
             alt="1950s vintage lamp"
             className="w-full h-96 object-cover"
-            width={500}
-            height={500}
+
           />
           <div className="absolute inset-0 bg-black opacity-20"></div>
     
