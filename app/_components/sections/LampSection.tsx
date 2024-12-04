@@ -8,12 +8,12 @@ export default function LampSection() {
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mb-16">
-        <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div className="relative overflow-hidden h-80 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
           <Image
             src="https://www.londonfine.co.uk/cdn/shop/products/18.7310-1_1024x1024.jpg?v=1614602289"
             alt="1950s vintage lamp"
-            className="w-full h-80 object-cover"
-
+            className="object-cover"
+            fill
           />
           <div className="absolute inset-0 bg-primary opacity-20"></div>
           <div className="text-primary absolute bottom-0 left-0 right-0 flex justify-between p-4 bg-text3 opacity-90">
