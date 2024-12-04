@@ -5,7 +5,7 @@ import LampSection from "../_components/sections/LampSection";
 import AboutSection from "../_components/sections/AboutSection";
 import { Suspense } from "react";
 import background from "../../public/workshop1.webp";
-import hero1 from "../../public/heroD.jpg";
+import hero1 from "../../public/heroD.webp";
 
 export default function Home() {
   return (
