@@ -1,10 +1,9 @@
 import Image from "next/image";
-import hero1 from "../../public/hero1.webp";
-import workshop1 from "../../public/workshop1.webp";
 import Expandable from "../_components/animata/carousel/expandable";
 import Link from "next/link";
 import LampSection from "../_components/sections/LampSection";
 import AboutSection from "../_components/sections/AboutSection"
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -12,7 +11,7 @@ export default function Home() {
       <div className="z-0 relative bg-gradient-to-r from-primary to-secondary h-screen text-text1 overflow-hidden">
         <div className="absolute inset-0 ">
           <Image
-            src={hero1}
+            src="/hero1.webp"
             alt="Background Image"
             className="object-cover object-center w-full h-full"
             width={500}
@@ -40,13 +39,15 @@ export default function Home() {
 
       <div className="inset-0 justify-center  py-20 h-3/5 px-8 bg-gradient-to-r from-primaryd to-primary">
         <div className=" max-w-screen-lg mx-auto ">
-          <Expandable className="w-full min-w-72" />
+          <Suspense fallback={<p>Loading</p>}>
+            <Expandable className="w-full min-w-72" />
+          </Suspense>
         </div>
       </div>
       <div className="relative pb-20 h-fit">
         <div className="absolute inset-0">
           <Image
-            src={workshop1}
+            src="/workshop1.webp"
             alt="Background Image"
             className="object-cover object-center w-full h-full blur-sm"
             width={250}
@@ -76,10 +77,14 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-12 pt-6 max-w-screen-xl text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
-            <AboutSection />
+            <Suspense fallback={<p>Loading</p>}>
+              <AboutSection />
+            </Suspense>
           </div>
           <div className="mt-12 pt-6 max-w-screen-xl text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
-            <LampSection />
+            <Suspense fallback={<p>Loading</p>}>  
+              <LampSection />
+            </Suspense>
           </div>
           
         </div>

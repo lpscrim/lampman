@@ -5,8 +5,6 @@ import DDButton from "../navigation/DDButton";
 import Image from "next/image";
 import Link from "next/link";
 import SplitText from "../animata/text/split-text";
-import bulb from "../../favicon.ico";
-
 import { useState, useContext } from "react"
 import { CartContext } from "@/app/_context/cart"
 
@@ -30,7 +28,7 @@ export default function NavBar2() {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <Image className="hidden xsm:block"src={bulb} alt="Logo" width={30} />
+          <Image className="hidden xsm:block" src="/favicon.ico" alt="Logo" width={30} />
           <SplitText text="LAMPMAN" />
         </Link>
 
