@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="text-text1">
       <div className="z-0 relative h-screen overflow-hidden">
-        <div className="absolute inset-0 brightness-50">
+        <div className="absolute inset-0 brightness-50 ">
           <Image
             src={hero1}
             alt="Background Image"
@@ -47,11 +47,11 @@ export default function Home() {
       </div>
       <Suspense fallback={<p>Loading</p>}>
         <div className="relative pb-20 h-fit">
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 overflow-hidden">
             <Image
               src={background}
               alt="Background Image"
-              className="object-cover object-center brightness-50 blur-sm"
+              className="object-cover object-center brightness-50 blur-[2px] scale-105 mt-6"
               quality={20}
               fill
             />
