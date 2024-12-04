@@ -52,7 +52,7 @@ export default function Home() {
               src={background}
               alt="Background Image"
               className="object-cover object-center brightness-50 blur-sm scale-105 mt-6"
-              quality={20}
+              quality={10}
               fill
             />
           </div>
