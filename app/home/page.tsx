@@ -51,7 +51,7 @@ export default function Home() {
             <Image
               src={background}
               alt="Background Image"
-              className="object-cover object-center brightness-50 blur-[2px] scale-105 mt-6"
+              className="object-cover object-center brightness-50 blur-sm scale-105 mt-6"
               quality={20}
               fill
             />
