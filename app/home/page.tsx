@@ -5,20 +5,20 @@ import LampSection from "../_components/sections/LampSection";
 import AboutSection from "../_components/sections/AboutSection";
 import { Suspense } from "react";
 import background from "../../public/workshop1.webp";
-import hero1 from "../../public/hero1.webp";
+import hero1 from "../../public/heroD.jpg";
 
 export default function Home() {
   return (
-    <div className="">
-      <div className="z-0 relative bg-gradient-to-r from-primary to-secondary h-screen text-text1 overflow-hidden">
+    <div className="text-text1">
+      <div className="z-0 relative h-screen overflow-hidden">
         <div className="absolute inset-0 ">
           <Image
             src={hero1}
             alt="Background Image"
-            className="object-cover object-center w-full h-full"
-            height={408}
-            width={728}
+            className="object-center object-cover"
+            fill
             quality={80}
+            priority
           />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
@@ -27,7 +27,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold leading-tight mb-4">
             Welcome to LAMPMAN
           </h1>
-          <p className="text-lg text-text1 mb-8">
+          <p className="text-lg   mb-8">
             Discover amazing LAMP and LAMP that await you.
           </p>
           <Link
@@ -59,7 +59,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-black opacity-50"></div>
           </div>
           <div id="about">
-            <div className="max-w-screen-lg text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
+            <div className="max-w-screen-lg relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
               <h1 className="text-3xl font-bold leading-tight mt-4 mb-2">
                 About
               </h1>
@@ -79,12 +79,12 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mt-12 pt-6 max-w-screen-xl text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
+            <div className="mt-12 pt-6 max-w-screen-xl   relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
               <Suspense fallback={<p>Loading</p>}>
                 <AboutSection />
               </Suspense>
             </div>
-            <div className="mt-12 pt-6 max-w-screen-xl text-text1 relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
+            <div className="mt-12 pt-6 max-w-screen-xl   relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
               <Suspense fallback={<p>Loading</p>}>
                 <LampSection />
               </Suspense>
