@@ -19,7 +19,7 @@ export default function Home() {
             fill
             quality={80}
             priority
-           />
+          />
           <div className="absolute inset-0 bg-black opacity-50"></div>
         </div>
 
@@ -55,7 +55,7 @@ export default function Home() {
               className="object-cover object-center blur-sm"
               quality={20}
               fill
-             />
+            />
             <div className="absolute inset-0 bg-black opacity-50"></div>
           </div>
           <div id="about">
@@ -79,16 +79,12 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mt-12 pt-6 max-w-screen-xl   relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
-              <Suspense fallback={<p>Loading</p>}>
-                <AboutSection />
-              </Suspense>
-            </div>
-            <div className="mt-12 pt-6 max-w-screen-xl   relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
-              <Suspense fallback={<p>Loading</p>}>
-                <LampSection />
-              </Suspense>
-            </div>
+            <Suspense fallback={<p>Loading</p>}>
+              <AboutSection />
+            </Suspense>
+            <Suspense fallback={<p>Loading</p>}>
+              <LampSection />
+            </Suspense>
           </div>
         </div>
       </Suspense>
