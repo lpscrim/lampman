@@ -28,7 +28,7 @@ export default function DDButton() {
 
       <MenuItems
         transition
-        className="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-text1 shadow-lg ring-1 ring-black/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+        className="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-text1 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
       >
         <div className="py-1">
           <MenuItem>
@@ -48,7 +48,7 @@ export default function DDButton() {
                 pathname: "/shop",
                 query: { type: "curios" },
               }}
-              className="hover:bg-text1h text-center block px-4 py-2 bg-text1 text-sm font-bold  text-text2 data-[focus]:bg-text1h data-[focus]:outline-none"
+              className="hover:bg-text1h text-center block px-4 py-2 bg-text1 text-sm font-bold text-text2 data-[focus]:bg-text1h data-[focus]:outline-none"
             >
               Curios
             </Link>
