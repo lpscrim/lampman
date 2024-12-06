@@ -2,3 +2,5 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 // added preinstall to  package.json
 //build on netifly
+
+ERRORRR
