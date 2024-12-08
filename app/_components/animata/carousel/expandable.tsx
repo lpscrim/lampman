@@ -75,6 +75,7 @@ const items = [
   {
     image:
       curioImage,
+    title: "Browse Curios",
     link:{
       pathname: "/shop",
       query: { type: "curios" },
