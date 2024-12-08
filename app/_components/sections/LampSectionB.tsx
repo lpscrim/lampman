@@ -8,7 +8,7 @@ export default function LampSection() {
         <h1 className="text-4xl font-bold text-center">Mac Lamp</h1>
         <h2 className="text-2xl mt-2 mb-8">by Terence Conran</h2>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mb-16">
-          <div className="max-w-lg relative overflow-hidden h-96">
+          <div className="mx-4  max-w-lg relative overflow-hidden h-96">
             <Image
               src={lamp}
               alt="vintage lamp"
