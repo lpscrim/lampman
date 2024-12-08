@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Expandable from "../_components/animata/carousel/expandable";
 import Link from "next/link";
-import LampSection from "../_components/sections/LampSection";
+import LampSectionB from "../_components/sections/LampSectionB";
+import LampSectionA from "../_components/sections/LampSectionA";
 import AboutSection from "../_components/sections/AboutSection";
 import { Suspense } from "react";
 import background from "../../public/workshop1.jpg";
@@ -51,37 +52,20 @@ export default function Home() {
             <Image
               src={background}
               alt="Background Image"
-              className="object-cover object-center brightness-50"
-              quality={20}
+              className="object-cover object-center brightness-[0.3]"
+              quality={40}
               fill
             />
           </div>
           <div id="about">
-            <div className="max-w-screen-lg relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
-              <h1 className="text-3xl font-bold leading-tight mt-4 mb-2">
-                About
-              </h1>
-              <div className="flex flex-row">
-                <p className="text-sm  font-bold leading-tight h-5/6 mt-2 mb-4 px-6 lg:text-base text-pretty">
-                  At [LAMPMAN], we’re passionate about breathing new life into
-                  the past.<br></br>Specializing in the restoration and
-                  refurbishment of antique lamps, we transform forgotten
-                  treasures into stunning, functional pieces for modern homes.{" "}
-                  <br></br>
-                  Beyond lighting, our collection boasts a fascinating array of
-                  oddities and curios—unique finds that spark curiosity and tell
-                  their own stories. <br></br>
-                  Whether you’re looking for a one-of-a-kind statement piece or
-                  a touch of vintage charm, we’re here to help you bring
-                  character and wonder into your space. <br></br>
-                </p>
-              </div>
-            </div>
             <Suspense fallback={<p>Loading</p>}>
               <AboutSection />
             </Suspense>
             <Suspense fallback={<p>Loading</p>}>
-              <LampSection />
+              <LampSectionA />
+            </Suspense>
+            <Suspense fallback={<p>Loading</p>}>
+              <LampSectionB />
             </Suspense>
           </div>
         </div>

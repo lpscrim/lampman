@@ -1,34 +1,37 @@
+import workshop from "../../../public/workshop2.jpg"
 import Image from "next/image";
 
-export default function LampSection() {
+export default function AboutSection() {
   return (
-    <div className="mt-12 pt-6 max-w-screen-xl   relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
-      <div className="container mx-auto px-4 h-full">
-        <h1 className="text-4xl font-bold mb-8 text-center text-text1">
-          How we do all the stuff
-        </h1>
+    <div className="max-w-screen-lg relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
 
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mb-16">
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Why we do stuff</h2>
-            <p className="list-disc pl-5 space-y-2">
-              wowuefowuebf oweifnw wkemfiw owfow rogi wom oa sd whrghwoei weifh
-              dj doas dohasifhowe a fwoie sdifh ifeh we pa sfjd j pv weweiog
-              rngru ho dfsd i vsidmaosfm woe fwenifisd a sdifj wefmsidm sidv
-              sidvhahhaoeem fl
-            </p>
-          </div>
-          <div className="relative overflow-hidden h-80 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            <Image
-              src="https://www.londonfine.co.uk/cdn/shop/products/18.7310-1_1024x1024.jpg?v=1614602289"
-              alt="1950s vintage lamp"
-              className="object-cover"
-              fill
-            />
-            <div className="absolute inset-0 bg-black opacity-20"></div>
-          </div>
-        </div>
+    <div className="container mx-auto p-6 h-full">
+      <h1 className="text-3xl font-bold leading-tight mt-4 mb-2">About</h1>
+      <div className="flex flex-row">
+        <p className="text-sm  font-bold leading-tight h-5/6 mt-2 mb-4 px-6 lg:text-base text-pretty">
+          At [LAMPMAN], we&#39re passionate about breathing new life into the
+          past.<br></br>Specializing in the restoration and refurbishment of
+          antique lamps, we transform forgotten treasures into stunning,
+          functional pieces for modern homes. <br></br>
+          Beyond lighting, our collection boasts a fascinating array of oddities
+          and curios—unique finds that spark curiosity and tell their own
+          stories. <br></br>
+          Whether you&#39re looking for a one-of-a-kind statement piece or a
+          touch of vintage charm, we&#39re here to help you bring character and
+          wonder into your space. <br></br>
+        </p>
+      </div>
+      <div className="relative overflow-hidden h-96 bg-white border-slate-50">
+        <Image 
+          alt="workshop"
+          fill
+          className="object-cover"
+          src={workshop}
+        />
       </div>
     </div>
+    </div>
   );
+}
+{
 }
