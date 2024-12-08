@@ -36,7 +36,7 @@ export default function LampSection() {
                 these lamps were a breakthrough in blending art with utility.
               </li>
               <li>
-                Terence Conran&#39s Mac Lamps remain collector&#39s items,
+                Terence Conran&#39;s Mac Lamps remain collector&#39;s items,
                 cherished for their historical value and timeless appeal in
                 design.
               </li>
@@ -51,13 +51,13 @@ export default function LampSection() {
           mid-20th-century industrial design, blending functionality with sleek,
           minimalist aesthetics.
           <br /><br />
-          Designed in the 1950s, these lamps showcase Conran&#39s commitment to
+          Designed in the 1950s, these lamps showcase Conran&#39;s commitment to
           democratizing good design by making it both accessible and stylish.
           The Mac Lamps were inspired by Scandinavian design principles,
           featuring clean lines, practical adjustability, and efficient use of
           materials. <br /><br />
           Their understated elegance, combined with high functionality, made
-          them iconic in contemporary interiors. They embodied Conran&#39s
+          them iconic in contemporary interiors. They embodied Conran&#39;s
           philosophy that everyday objects should enhance life through
           thoughtful design.
         </p>
