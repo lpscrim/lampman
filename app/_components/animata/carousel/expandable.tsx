@@ -4,6 +4,9 @@ import { HTMLAttributes, useEffect, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/app/_lib/utils";
 import Link from "next/link";
+import allImage from "../../../../public/angle4.jpg"
+import lampImage from "../../../../public/industrial3.jpg"
+import curioImage from "../../../../public/pom.jpg"
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
   item: { image: string; title: string; link: { pathname: string, query: { type: string }} };
@@ -53,7 +56,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
 const items = [
   {
     image:
-      "https://www.marthastewart.com/thmb/C8wLJr7Xpi7QjL92Nmo04sAOTS4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/bedroom-interior-in-the-night-957373992-190a491be1d24bd5aabef89b0dcfd578.jpg",
+      allImage,
     title: "Browse All",
     link: {
       pathname: "/shop",
@@ -62,7 +65,7 @@ const items = [
   },
   {
     image:
-"https://www.marthastewart.com/thmb/jXxUi2eaqcNbSTuxv2nHkT94bR4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/kitchen-lamp-green-lamp-neutral-kitchen-max-pooky-0323-bd9919a357ca44f58aa1a2609c913b51-bc7662f1c92b4f0ca722ce3aad2074bc.jpeg",
+      lampImage,
     title: "Browse Lamp",
     link:{
       pathname: "/shop",
@@ -71,22 +74,13 @@ const items = [
   },
   {
     image:
-"https://www.marthastewart.com/thmb/E1P_I5m1ZcOyFzsL5s1F90LMnc4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/TripleHeartDesign_creditMadisonStoa_-09bf3d7361e34730bd7de6f9b4d466ec-ac20d6cbd1f34c0f9df4ffb377525a2a.jpeg",    title: "Browse Curios",
+      curioImage,
     link:{
       pathname: "/shop",
       query: { type: "curios" },
     },
   },
-  {
-    image:
-"https://www.marthastewart.com/thmb/hqz_fU0ooK-gnFbMh-_CJjcP-f0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/sculpture-lamp-office-0721-2000-0a5161d2b80a4a3888d3041c6b6cc1d9.jpg",    title: "Browse Other",
-    link:{
-      pathname: "/shop",
-      query: { type: "all" },
-    },
-  },
-  
-  
+    
 ];
 
 export default function Expandable({ list = items, autoPlay = true, className }: ExpandableProps) {
