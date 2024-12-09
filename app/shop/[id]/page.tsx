@@ -234,6 +234,7 @@ export default async function ProductPage({
                   >
                     HERE
                   </Link>
+                  .
                 </p>
               </div>
             </div>
