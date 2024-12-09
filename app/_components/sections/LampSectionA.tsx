@@ -35,11 +35,11 @@ export default function LampSection() {
               fill
             />
             <div className="text-primary absolute bottom-0 left-0 right-0 flex justify-between p-4 bg-text3 opacity-90">
-            <Link href="https://twelvetwentyseven.wordpress.com/" >  
-              <button className="bg-primary text-secondary font-semibold px-4 py-2 rounded hover:bg-primaryh">
-                Learn More
-              </button>
-            </Link>
+              <Link target="_target" href="https://www.houseandgarden.co.uk/article/anglepoise-lamp">
+                <button className="bg-primary text-secondary font-semibold px-4 py-2 rounded hover:bg-primaryh">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
