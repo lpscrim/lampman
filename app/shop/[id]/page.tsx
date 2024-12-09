@@ -1,6 +1,7 @@
 import Stripe from "stripe";
 import Image from "next/image";
 import AddButton from "@/app/_components/products/AddButton";
+import Link from "next/link";
 
 type Product = Stripe.Product & {
   default_price: Stripe.Price;
@@ -118,14 +119,10 @@ export default async function ProductPage({
             </div>
           </div>
           <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
-            <div className="border-b border-text1 pb-6">
-              <p className="capitalize text-sm leading-none text-text3h">
-                {product.metadata.type} collection
-              </p>
+            <div className="border-b border-text3 pb-6">
               <h1
                 className="
-                    lg:text-2xl
-                    text-xl
+                    text-2xl
                     font-semibold
                     lg:leading-6
                     leading-7
@@ -136,7 +133,7 @@ export default async function ProductPage({
                 {product.name}
               </h1>
             </div>
-            <div className="py-4 border-b border-text1 flex items-center justify-between">
+            <div className="py-4 border-b border-text3 flex items-center justify-between">
               <p className="text-base leading-4 text-text2h">Size</p>
               <div className="flex items-center justify-center">
                 <p className="capitalize text-sm leading-none text-text2">
@@ -145,7 +142,7 @@ export default async function ProductPage({
                 
               </div>
             </div>
-            <div className="py-4 border-b border-text1 flex items-center justify-between">
+            <div className="py-4 flex items-center justify-between">
               <p className="text-base leading-4 text-text2h">Price</p>
               <div className="flex items-center justify-center">
                 <p className="text-sm leading-none text-text2">
@@ -174,11 +171,11 @@ export default async function ProductPage({
               </p>
             </div>
             <div>
-              <div className="border-t border-b py-4 mt-7 border-text1">
+              <div className="border-t border-b py-6 mt-10 border-text3">
                 <div className="flex justify-between items-center cursor-pointer">
-                  <p className="text-base leading-4 text-text2">
+                  <h2 className="text-lg font-bold leading-4 text-text2">
                     Shipping and returns
-                  </p>
+                  </h2>
                 </div>
                 <div
                   className={
@@ -186,17 +183,20 @@ export default async function ProductPage({
                   }
                   id="sect"
                 >
+                  We send all items with Royal Mail special delivery to ensure a 
+                  safe and secure delivery process.
                   You will be responsible for paying for your own shipping costs
-                  for returning your item. Shipping costs are nonrefundable
+                  for returning your item. We ask that you also use a tracked 
+                  and secure method as damaged items will not be refunded.
                 </div>
               </div>
             </div>
             <div>
-              <div className="border-b py-4 border-text1">
+              <div className="border-b py-6 border-text3">
                 <div className="flex justify-between items-center cursor-pointer">
-                  <p className="text-base leading-4 text-text2">
+                  <h2 className="text-lg font-bold leading-4 text-text2">
                     Contact us
-                  </p>
+                  </h2>
                 </div>
                 <div
                   className={
@@ -204,8 +204,8 @@ export default async function ProductPage({
                   }
                   id="sect"
                 >
-                  If you have any questions on how to return your item to us,
-                  contact us. (Create Link Button to contact page)
+                  If you have any questions about the item or on how to return your item to us,
+                  contact us. Please contact us <Link className="text-primary font-bold text-sm" href="/contact">HERE</Link>
                 </div>
               </div>
             </div>
