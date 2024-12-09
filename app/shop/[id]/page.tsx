@@ -205,7 +205,7 @@ export default async function ProductPage({
                   id="sect"
                 >
                   If you have any questions about the item or on how to return your item to us,
-                  contact us. Please contact us <Link className="text-primary font-bold text-sm" href="/contact">HERE</Link>
+                  contact us. Please contact us <Link className="text-primary font-bold text-sm hover:text-primaryh" href="/contact">HERE</Link>
                 </div>
               </div>
             </div>
