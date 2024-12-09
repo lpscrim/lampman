@@ -26,7 +26,7 @@ export default function LampSection() {
               design, blending utility with elegance.
             </p>
           </div>
-          <div className="mx-4 relative overflow-hidden h-96 max-w-lg">
+          <div className="mx-4 relative rounded-sm overflow-hidden h-96 max-w-lg">
             <Image
               src={lamp}
               alt="1950s vintage lamp"

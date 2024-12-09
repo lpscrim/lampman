@@ -21,7 +21,7 @@ export default function AboutSection() {
           wonder into your space. <br></br>
         </p>
       </div>
-      <div className="mx-4 relative overflow-hidden h-96 bg-white border-slate-50">
+      <div className="mx-4 relative overflow-hidden h-96 rounded-sm">
         <Image 
           alt="workshop"
           fill
