@@ -36,13 +36,12 @@ export default async function ProductPage({
     });
 
     if (!response.active || !(Number(response.metadata.stock) > 0)) {
-      throw new Error("Product has sold out!")
+      throw new Error("Product has sold out!");
     }
 
     if (!response) {
       throw new Error("No products found");
     }
-
 
     product = {
       ...response,
@@ -58,6 +57,7 @@ export default async function ProductPage({
         <div className="md:flex items-start justify-center py-12 xl:px-0 md:px-6 px-4">
           <div className="xl:w-2/5 lg:w-2/5 w-80 md:block hidden">
             {product.images.length > 0 ? (
+              <Link href={product.images[0]}> {/* Revert to new tab with link once Imgur set up*/}
               <Image
                 alt={`Product ${product.id}`}
                 src={product.images[0]}
@@ -66,8 +66,10 @@ export default async function ProductPage({
                 height={342}
                 priority
               />
+              </Link>
             ) : null}
             {product.metadata.img1 ? (
+              <Link target="_blank" href={product.metadata.img1}>
               <Image
                 alt={`Product ${product.metadata.img1}`}
                 src={product.metadata.img1}
@@ -76,10 +78,12 @@ export default async function ProductPage({
                 height={682.5}
                 priority
               />
+              </Link>
             ) : null}
           </div>
           <div className="md:hidden">
             {product.images.length > 0 ? (
+              <Link href={product.images[0]}>
               <Image
                 alt={`Product ${product.id}`}
                 src={product.images[0]}
@@ -87,34 +91,53 @@ export default async function ProductPage({
                 width={800}
                 height={800}
               />
+              </Link>
             ) : null}
             <div className="flex flex-row items-center justify-between mt-3 space-x-4 md:space-x-0 overflow-hidden ">
               {product.metadata.img1 ? (
-                <Image
-                  alt={`Product ${product.id}`}
-                  src={product.metadata.img1}
-                  className="rounded-md w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
-                  width={200}
-                  height={200}
-                />
+                <Link
+                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
+                  target="_blank"
+                  href={product.metadata.img1}
+                >
+                  <Image
+                    alt={`Product ${product.id}`}
+                    src={product.metadata.img1}
+                    width={200}
+                    height={200}
+                    className="rounded-md"
+                  />
+                </Link>
               ) : null}
               {product.metadata.img2 ? (
-                <Image
-                  alt={`Product ${product.id}`}
-                  src={product.metadata.img2}
-                  className="rounded-md w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
-                  width={200}
-                  height={200}
-                />
+                <Link
+                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
+                  target="_blank"
+                  href={product.metadata.img2}
+                >
+                  <Image
+                    alt={`Product ${product.id}`}
+                    src={product.metadata.img2}
+                    className="rounded-md"
+                    width={200}
+                    height={200}
+                  />
+                </Link>
               ) : null}
               {product.metadata.img3 ? (
-                <Image
-                  alt={`Product ${product.id}`}
-                  src={product.metadata.img3}
-                  className="rounded-md w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
-                  width={200}
-                  height={200}
-                />
+                <Link
+                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
+                  target="_blank"
+                  href={product.metadata.img3}
+                >
+                  <Image
+                    alt={`Product ${product.id}`}
+                    src={product.metadata.img3}
+                    className="rounded-md"
+                    width={200}
+                    height={200}
+                  />
+                </Link>
               ) : null}
             </div>
           </div>
@@ -139,7 +162,6 @@ export default async function ProductPage({
                 <p className="capitalize text-sm leading-none text-text2">
                   {product.metadata.size}
                 </p>
-                
               </div>
             </div>
             <div className="py-4 flex items-center justify-between">
@@ -153,9 +175,9 @@ export default async function ProductPage({
                       ).toFixed(2)
                     : "N/A"}
                 </p>
-                </div>
+              </div>
             </div>
-            <AddButton text={"Add to Basket"} product={product}/>
+            <AddButton text={"Add to Basket"} product={product} />
             <div>
               <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-text2h mt-7 break-words">
                 {product.description}
@@ -183,11 +205,11 @@ export default async function ProductPage({
                   }
                   id="sect"
                 >
-                  We send all items with Royal Mail special delivery to ensure a 
-                  safe and secure delivery process.
-                  You will be responsible for paying for your own shipping costs
-                  for returning your item. We ask that you also use a tracked 
-                  and secure method as damaged items will not be refunded.
+                  We send all items with Royal Mail special delivery to ensure a
+                  safe and secure delivery process. You will be responsible for
+                  paying for your own shipping costs for returning your item. We
+                  ask that you also use a tracked and secure method as damaged
+                  items will not be refunded.
                 </div>
               </div>
             </div>
@@ -204,8 +226,14 @@ export default async function ProductPage({
                   }
                   id="sect"
                 >
-                  If you have any questions about the item or on how to return your item to us,
-                  contact us. Please contact us <Link className="text-primary font-bold text-sm hover:text-primaryh" href="/contact">HERE</Link>
+                  If you have any questions about the item or on how to return
+                  your item to us, contact us. Please contact us{" "}
+                  <Link
+                    className="text-primary font-bold text-sm hover:text-primaryh"
+                    href="/contact"
+                  >
+                    HERE
+                  </Link>
                 </div>
               </div>
             </div>
