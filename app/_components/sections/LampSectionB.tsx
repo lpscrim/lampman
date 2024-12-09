@@ -24,8 +24,8 @@ export default function LampSection() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Why They Matter</h2>
-            <ul className="list-disc pl-5 space-y-2">
+            <h2 className="text-2xl font-semibold mb-6">Why They Matter</h2>
+            <ul className="list-disc pl-4 md:pl-0 space-y-8">
               <li>
                 The Mac Lamps represent a shift towards modernist ideals in
                 post-war Britain, emphasizing practicality and aesthetic

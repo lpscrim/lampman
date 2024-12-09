@@ -9,7 +9,7 @@ export default function LampSection() {
         <h2 className="text-2xl mt-2 mb-8">by George Carwardine</h2>
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8 mb-16">
           <div>
-            <h1 className="text-2xl font-semibold mb-4">
+            <h1 className="text-2xl font-semibold mb-6">
               Iconic British Design
             </h1>
             <p className="list-disc pl-5 space-y-2">
