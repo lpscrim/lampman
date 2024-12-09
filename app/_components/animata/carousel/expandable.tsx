@@ -1,7 +1,7 @@
 "use client"
 
 import { HTMLAttributes, useEffect, useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { cn } from "@/app/_lib/utils";
 import Link from "next/link";
 import allImage from "../../../../public/angle4.jpg"
@@ -9,13 +9,13 @@ import lampImage from "../../../../public/industrial3.jpg"
 import curioImage from "../../../../public/pom.jpg"
 
 interface ImageProps extends HTMLAttributes<HTMLDivElement> {
-  item: { image: string; title: string; link: { pathname: string, query: { type: string }} };
+  item: { image: string| StaticImageData; title: string; link: { pathname: string, query: { type: string }} };
   index: number;
   activeItem: number;
 }
 
 interface ExpandableProps {
-  list?: { image: string; title: string; link: {pathname: string, query: { type: string }}}[];
+  list?: { image: string | StaticImageData; title: string; link: {pathname: string, query: { type: string }}}[];
   autoPlay?: boolean;
   className?: string;
 }
