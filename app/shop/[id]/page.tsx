@@ -57,40 +57,42 @@ export default async function ProductPage({
         <div className="md:flex items-start justify-center py-12 xl:px-0 md:px-6 px-4">
           <div className="xl:w-2/5 lg:w-2/5 w-80 md:block hidden">
             {product.images.length > 0 ? (
-              <Link href={product.images[0]}> {/* Revert to new tab with link once Imgur set up*/}
-              <Image
-                alt={`Product ${product.id}`}
-                src={product.images[0]}
-                className="rounded-md object-center"
-                width={512}
-                height={342}
-                priority
-              />
+              <Link href={product.images[0]}>
+                {" "}
+                {/* Revert to new tab with link once Imgur set up*/}
+                <Image
+                  alt={`Product ${product.id}`}
+                  src={product.images[0]}
+                  className="rounded-md object-center"
+                  width={512}
+                  height={342}
+                  priority
+                />
               </Link>
             ) : null}
             {product.metadata.img1 ? (
               <Link target="_blank" href={product.metadata.img1}>
-              <Image
-                alt={`Product ${product.metadata.img1}`}
-                src={product.metadata.img1}
-                className="rounded-md object-center "
-                width={512}
-                height={682.5}
-                priority
-              />
+                <Image
+                  alt={`Product ${product.metadata.img1}`}
+                  src={product.metadata.img1}
+                  className="rounded-md object-center "
+                  width={512}
+                  height={682.5}
+                  priority
+                />
               </Link>
             ) : null}
           </div>
           <div className="md:hidden">
             {product.images.length > 0 ? (
               <Link href={product.images[0]}>
-              <Image
-                alt={`Product ${product.id}`}
-                src={product.images[0]}
-                className="w-full h-auto object-cover rounded-md"
-                width={800}
-                height={800}
-              />
+                <Image
+                  alt={`Product ${product.id}`}
+                  src={product.images[0]}
+                  className="w-full h-auto object-cover rounded-md"
+                  width={800}
+                  height={800}
+                />
               </Link>
             ) : null}
             <div className="flex flex-row items-center justify-between mt-3 space-x-4 md:space-x-0 overflow-hidden ">
@@ -199,18 +201,17 @@ export default async function ProductPage({
                     Shipping and returns
                   </h2>
                 </div>
-                <div
+                <p
                   className={
                     "pt-4 text-base leading-normal pr-12 mt-4 text-text2h "
                   }
-                  id="sect"
                 >
                   We send all items with Royal Mail special delivery to ensure a
                   safe and secure delivery process. You will be responsible for
                   paying for your own shipping costs for returning your item. We
                   ask that you also use a tracked and secure method as damaged
                   items will not be refunded.
-                </div>
+                </p>
               </div>
             </div>
             <div>
@@ -220,21 +221,20 @@ export default async function ProductPage({
                     Contact us
                   </h2>
                 </div>
-                <div
+                <p
                   className={
                     "pt-4 text-base leading-normal pr-12 mt-4 text-text2h "
                   }
-                  id="sect"
                 >
                   If you have any questions about the item or on how to return
-                  your item to us, contact us. Please contact us{" "}
+                  your item to us, contact us{" "}
                   <Link
                     className="text-primary font-bold text-sm hover:text-primaryh"
                     href="/contact"
                   >
                     HERE
                   </Link>
-                </div>
+                </p>
               </div>
             </div>
           </div>
