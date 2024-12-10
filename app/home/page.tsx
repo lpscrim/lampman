@@ -57,15 +57,21 @@ export default function Home() {
               fill
             />
           </div>
-          <div id="about">
+          <div className="py-20" id="about">
             <Suspense fallback={<p>Loading</p>}>
+              <div className="py-12">
               <AboutSection />
+              </div>
             </Suspense>
             <Suspense fallback={<p>Loading</p>}>
+            <div className="py-12">
               <LampSectionA />
+            </div>
             </Suspense>
             <Suspense fallback={<p>Loading</p>}>
+            <div className="py-12">
               <LampSectionB />
+            </div>
             </Suspense>
           </div>
         </div>

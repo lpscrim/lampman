@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function AboutSection() {
   return (
-    <div className="max-w-screen-lg relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
+    <div className="py-8 max-w-screen-lg relative rounded-md z-1 flex flex-col mx-auto w-4/5 bg-secondary opacity-90 justify-center items-center h-auto text-center">
 
     <div className="container mx-auto p-6 h-full">
-      <h1 className="text-3xl font-bold leading-tight mt-4 mb-2">About</h1>
+      <h1 className="text-3xl font-bold leading-tight mb-2">About</h1>
       <div className="flex flex-row">
         <p className="text-md h-5/6 mt-2 mb-4 px-6 lg:text-base text-pretty">
           Specializing in the restoration and refurbishment of

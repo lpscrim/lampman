@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function LampSection() {
   return (
-    <div className="mt-12 pt-6 max-w-screen-xl relative rounded-md z-1 flex flex-col top-8 mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
+    <div className="mt-12 py-8 max-w-screen-xl relative rounded-md z-1 flex flex-col mx-auto w-4/5 bg-secondary opacity-85 justify-center items-center h-auto text-center">
       <div className="container mx-auto px-4 h-full">
         <h1 className="text-4xl font-bold text-center">Anglepoise Lamp</h1>
         <h2 className="text-2xl mt-2 mb-8">by George Carwardine</h2>
