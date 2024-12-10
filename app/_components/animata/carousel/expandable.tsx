@@ -66,7 +66,7 @@ const items = [
   {
     image:
       lampImage,
-    title: "Browse Lamp",
+    title: "Browse Lamps",
     link:{
       pathname: "/shop",
       query: { type: "lamps" },
