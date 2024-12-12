@@ -27,19 +27,19 @@ export default function Home() {
           <h1 className="text-5xl font-bold leading-tight mb-4">
             Welcome to LAMPMAN
           </h1>
-          <p className="text-lg   mb-8">
-            Discover amazing LAMP and LAMP that await you.
+          <p className="text-lg mb-8">
+            
           </p>
           <Link
             href="/shop"
             className="bg-logo text-text2 hover:bg-primary py-2 px-6 rounded-full text-lg font-semibold transition duration-200 ease-in-out transform hover:scale-105"
           >
-            Take me to the LAMPS
+            Browse Products
           </Link>
         </div>
       </div>
 
-      <div className="inset-0 justify-center  py-20 h-3/5 px-8 bg-gradient-to-r from-primaryd to-primary">
+      <div className="inset-0 justify-center py-20 h-3/5 px-8 bg-gradient-to-r from-primaryd to-primary">
         <div className=" max-w-screen-lg mx-auto ">
           <Suspense fallback={<p>Loading</p>}>
             <Expandable/>
@@ -52,8 +52,8 @@ export default function Home() {
             <Image
               src={background}
               alt="Background Image"
-              className="object-cover object-center brightness-[0.3]"
-              quality={40}
+              className="object-cover object-center brightness-[0.3] blur-sm scale-[1.1]"
+              quality={50}
               fill
             />
           </div>
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
             </Suspense>
             <Suspense fallback={<p>Loading</p>}>
-            <div className="py-12">
+            <div className="pt-12">
               <LampSectionB />
             </div>
             </Suspense>
