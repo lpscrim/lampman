@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Stripe from "stripe";
 import ImageViewer from "@/app/_components/products/ImageViewer";
@@ -70,7 +69,7 @@ export default function ImageGallery({ product }: { product: Product }) {
           <Image
             alt={`Product ${product.metadata.img1}`}
             src={product.metadata.img1}
-            className="cursor-pointer rounded-md object-center"
+            className=" mt-6 cursor-pointer rounded-md object-center"
             width={512}
             height={682.5}
             priority

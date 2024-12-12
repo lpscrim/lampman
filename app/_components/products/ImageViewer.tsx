@@ -40,7 +40,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
             &gt;
           </button>
         </div>
-        <button onClick={offClick} className="mt-8 bg-secondary rounded-md p-4 text-lg font-semibold text-primary shadow-md hover:bg-secondaryh transition-colors duration-300">CLOSE</button>
+        <button onClick={offClick} className="mt-8 bg-primary rounded-md p-4 text-lg font-semibold text-secondary shadow-md hover:bg-primaryh transition-colors duration-300">CLOSE</button>
 
       </div>
     </div>
