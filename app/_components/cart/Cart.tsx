@@ -37,14 +37,14 @@ export default function Cart({
             <h1 className="border-b-2 px-2 border-text2 mt-10 text-2xl font-bold">
               Basket
             </h1>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6">
               {cartItems.map((item) => (
                 <div
                   className="flex justify-between items-center"
                   key={item.id}
                 >
                   <Link href={`/shop/${item.id}`}>
-                    <div className="flex gap-4">
+                    <div className="flex gap-8">
                       <Image
                         src={item.images[0]}
                         alt={item.name}
