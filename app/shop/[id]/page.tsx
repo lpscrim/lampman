@@ -1,7 +1,7 @@
 import Stripe from "stripe";
-import Image from "next/image";
 import AddButton from "@/app/_components/products/AddButton";
 import Link from "next/link";
+import ImageGallery from "@/app/_components/products/ImageGallery";
 
 type Product = Stripe.Product & {
   default_price: Stripe.Price;
@@ -55,94 +55,7 @@ export default async function ProductPage({
     <>
       {product ? (
         <div className="md:flex items-start justify-center py-12 xl:px-0 md:px-6 px-4">
-          <div className="xl:w-2/5 lg:w-2/5 w-80 md:block hidden">
-            {product.images.length > 0 ? (
-              <Link href={product.images[0]}>
-                {" "}
-                {/* Revert to new tab with link once Imgur set up*/}
-                <Image
-                  alt={`Product ${product.id}`}
-                  src={product.images[0]}
-                  className="rounded-md object-center"
-                  width={512}
-                  height={342}
-                  priority
-                />
-              </Link>
-            ) : null}
-            {product.metadata.img1 ? (
-              <Link target="_blank" href={product.metadata.img1}>
-                <Image
-                  alt={`Product ${product.metadata.img1}`}
-                  src={product.metadata.img1}
-                  className="rounded-md object-center "
-                  width={512}
-                  height={682.5}
-                  priority
-                />
-              </Link>
-            ) : null}
-          </div>
-          <div className="md:hidden">
-            {product.images.length > 0 ? (
-              <Link href={product.images[0]}>
-                <Image
-                  alt={`Product ${product.id}`}
-                  src={product.images[0]}
-                  className="w-full h-auto object-cover rounded-md"
-                  width={800}
-                  height={800}
-                />
-              </Link>
-            ) : null}
-            <div className="flex flex-row items-center justify-between mt-3 space-x-4 md:space-x-0 overflow-hidden ">
-              {product.metadata.img1 ? (
-                <Link
-                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
-                  target="_blank"
-                  href={product.metadata.img1}
-                >
-                  <Image
-                    alt={`Product ${product.id}`}
-                    src={product.metadata.img1}
-                    width={200}
-                    height={200}
-                    className="rounded-md"
-                  />
-                </Link>
-              ) : null}
-              {product.metadata.img2 ? (
-                <Link
-                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
-                  target="_blank"
-                  href={product.metadata.img2}
-                >
-                  <Image
-                    alt={`Product ${product.id}`}
-                    src={product.metadata.img2}
-                    className="rounded-md"
-                    width={200}
-                    height={200}
-                  />
-                </Link>
-              ) : null}
-              {product.metadata.img3 ? (
-                <Link
-                  className="w-[calc(33.333%-0.5rem)] h-auto object-cover shrink-0"
-                  target="_blank"
-                  href={product.metadata.img3}
-                >
-                  <Image
-                    alt={`Product ${product.id}`}
-                    src={product.metadata.img3}
-                    className="rounded-md"
-                    width={200}
-                    height={200}
-                  />
-                </Link>
-              ) : null}
-            </div>
-          </div>
+          <ImageGallery product={product}/>
           <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
             <div className="border-b border-text3 pb-6">
               <h1
