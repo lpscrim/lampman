@@ -52,14 +52,11 @@ input:-webkit-autofill{
   -webkit-text-fill-color: var(--primary) !important;
 }
 
-h1,h2,h3{
- font-family: "Montserrat Variable";
-}
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Montserrat Variable', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat Variable', 'Urbanist Variable', Arial, Helvetica, sans-serif;
 }
 
 
