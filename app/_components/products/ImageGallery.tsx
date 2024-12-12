@@ -79,52 +79,52 @@ export default function ImageGallery({ product }: { product: Product }) {
       </div>
       <div className="md:hidden">
         {product.images.length > 0 ? (
-          <Image
-            alt={`Product ${product.id}`}
-            src={product.images[0]}
-            className="cursor-pointer w-full h-auto object-cover rounded-md"
-            width={800}
-            height={800}
-            onClick={() => handleOnClicked(product.images[0] as string, 0)}
-          />
+          <div className="w-full h-[450px] relative overflow-hidden cursor-pointer rounded-md mb-4">
+            <Image
+              alt={`Product ${product.id}`}
+              src={product.images[0]}
+              fill
+              className="object-cover"
+              onClick={() => handleOnClicked(product.images[0] as string, 0)}
+            />
+          </div>
         ) : null}
-        <div className="flex flex-row items-center justify-between mt-3 space-x-4 md:space-x-0 overflow-hidden ">
-          {product.metadata.img1 ? (
-            <Image
-              alt={`Product ${product.id}`}
-              src={product.metadata.img1}
-              width={200}
-              height={200}
-              className="cursor-pointer rounded-md"
-              onClick={() =>
-                handleOnClicked(product.metadata.img1 as string, 1)
-              }
-            />
-          ) : null}
-          {product.metadata.img2 ? (
-            <Image
-              alt={`Product ${product.id}`}
-              src={product.metadata.img2}
-              className="cursor-pointer rounded-md"
-              width={200}
-              height={200}
-              onClick={() =>
-                handleOnClicked(product.metadata.img1 as string, 2)
-              }
-            />
-          ) : null}
-          {product.metadata.img3 ? (
-            <Image
-              alt={`Product ${product.id}`}
-              src={product.metadata.img3}
-              className="cursor-pointer rounded-md"
-              width={200}
-              height={200}
-              onClick={() =>
-                handleOnClicked(product.metadata.img1 as string, 3)
-              }
-            />
-          ) : null}
+        <div className="flex flex-row items-center justify-around mt-3 space-x-4 md:space-x-0 overflow-hidden">
+          <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
+            {product.metadata.img1 && (
+              <Image
+                alt={`Product ${product.id}`}
+                src={product.metadata.img1}
+                fill
+                className="object-cover"
+                onClick={() => handleOnClicked(product.metadata.img1, 1)}
+              />
+            )}
+          </div>
+
+          <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
+            {product.metadata.img2 && (
+              <Image
+                alt={`Product ${product.id}`}
+                src={product.metadata.img2}
+                fill
+                className="object-cover"
+                onClick={() => handleOnClicked(product.metadata.img2, 2)}
+              />
+            )}
+          </div>
+
+          <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
+            {product.metadata.img3 && (
+              <Image
+                alt={`Product ${product.id}`}
+                src={product.metadata.img3}
+                fill
+                className="object-cover"
+                onClick={() => handleOnClicked(product.metadata.img3, 3)}
+              />
+            )}
+          </div>
         </div>
       </div>
     </>
