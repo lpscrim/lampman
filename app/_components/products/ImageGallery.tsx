@@ -53,30 +53,33 @@ export default function ImageGallery({ product }: { product: Product }) {
         />
       )}
 
-      <div className="lg:w-2/5 w-80 md:block hidden">
-        {product.images.length > 0 ? (
-          <Image
-            alt={`Product ${product.id}`}
-            src={product.images[0]}
-            className="cursor-pointer rounded-md object-center "
-            width={512}
-            height={342}
-            priority
-            onClick={() => handleOnClicked(product.images[0] as string, 0)}
-          />
-        ) : null}
-        {product.metadata.img1 ? (
-          <Image
-            alt={`Product ${product.metadata.img1}`}
-            src={product.metadata.img1}
-            className=" mt-6 cursor-pointer rounded-md object-center"
-            width={512}
-            height={682.5}
-            priority
-            onClick={() => handleOnClicked(product.metadata.img1 as string, 1)}
-          />
-        ) : null}
-      </div>
+<div className="lg:w-2/5 w-80 md:block hidden">
+  <div className="w-full max-w-[600px] h-[342px] relative overflow-hidden cursor-pointer rounded-md mb-8">
+    {product.images.length > 0 ? (
+      <Image
+        alt={`Product ${product.id}`}
+        src={product.images[0]}
+        fill
+        className="cursor-pointer object-cover"
+        priority
+        onClick={() => handleOnClicked(product.images[0] as string, 0)}
+      />
+    ) : null}
+  </div>
+  
+  {product.metadata.img1 && (
+    <div className="w-full max-w-[600px] h-[682.5px] relative overflow-hidden cursor-pointer rounded-md">
+      <Image
+        alt={`Product ${product.metadata.img1}`}
+        src={product.metadata.img1}
+        fill
+        className="cursor-pointer object-cover"
+        priority
+        onClick={() => handleOnClicked(product.metadata.img1 as string, 1)}
+      />
+    </div>
+  )}
+</div>
       <div className="md:hidden">
         {product.images.length > 0 ? (
           <div className="w-full h-[450px] relative overflow-hidden cursor-pointer rounded-md mb-4">

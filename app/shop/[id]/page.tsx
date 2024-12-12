@@ -54,7 +54,7 @@ export default async function ProductPage({
   return (
     <>
       {product ? (
-        <div className="md:flex items-start justify-center py-12 xl:px-0 md:px-6 px-4">
+        <div className="md:flex items-start justify-center py-8 xl:px-0 md:px-6 px-4">
           <ImageGallery product={product}/>
           <div className="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
             <div className="border-b border-text3 pb-6">
