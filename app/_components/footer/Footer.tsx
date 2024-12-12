@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="absolute bg-secondary flex flex-row flex-wrap items-center justify-center w-full py-4 px-4 text-center border-t gap-y-6 gap-x-12 border-secondary md:justify-between">
       <p className="block text-logo font-semibold text-sm">
-        LampMan
+      {process.env.NEXT_PUBLIC_SITE_NAME}
       </p>
       <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
         <li>

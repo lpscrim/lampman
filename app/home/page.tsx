@@ -12,23 +12,23 @@ export default function Home() {
   return (
     <div className="text-text1">
       <div className="z-0 relative h-screen overflow-hidden">
-        <div className="absolute inset-0 brightness-50 ">
+        <div className="absolute inset-0 brightness-50">
           <Image
             src={hero1}
             alt="Background Image"
             className="object-center object-cover"
             fill
-            quality={80}
+            quality={90}
             priority
           />
         </div>
 
         <div className="relative z-10 flex flex-col justify-center items-center h-full text-center">
           <h1 className="text-5xl font-bold leading-tight mb-4">
-            Welcome to LAMPMAN
+            Welcome to {process.env.NEXT_PUBLIC_SITE_NAME ?.toUpperCase()}
           </h1>
-          <p className="text-lg mb-8">
-            
+          <p className="text-lg text-text1 mb-8">
+            Tastefully restored Lamps and Curios.
           </p>
           <Link
             href="/shop"
