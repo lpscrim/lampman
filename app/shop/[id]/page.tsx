@@ -72,10 +72,10 @@ export default async function ProductPage({
               </h1>
             </div>
             <div className="py-4 border-b border-text3 flex items-center justify-between">
-              <p className="text-base leading-4 text-text2h">Size</p>
+              <p className="text-base leading-4 text-text2h">Type</p>
               <div className="flex items-center justify-center">
                 <p className="capitalize text-sm leading-none text-text2">
-                  {product.metadata.size}
+                  {product.metadata.tag}
                 </p>
               </div>
             </div>
