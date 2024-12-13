@@ -27,7 +27,7 @@ export default function Cart({
         >
           <div className="w-full py-1 px-1">
             <button
-              className="absolute right-1 px-4 py-2 bg-secondary text-primary text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
+              className="absolute right-1 px-4 py-3 bg-secondary text-primary text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
               onClick={toggle}
             >
               Close
