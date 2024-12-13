@@ -54,7 +54,7 @@ export default function ImageGallery({ product }: { product: Product }) {
       )}
 
 <div className="lg:w-2/5 w-80 md:block hidden">
-  <div className="w-full max-w-[600px] h-[342px] relative overflow-hidden cursor-pointer rounded-md mb-8">
+  <div className="w-full max-w-[600px] h-[600px] relative overflow-hidden cursor-pointer rounded-md mb-8">
     {product.images.length > 0 ? (
       <Image
         alt={`Product ${product.id}`}
@@ -68,7 +68,7 @@ export default function ImageGallery({ product }: { product: Product }) {
   </div>
   
   {product.metadata.img1 && (
-    <div className="w-full max-w-[600px] h-[682.5px] relative overflow-hidden cursor-pointer rounded-md">
+    <div className="group w-full max-w-[600px] h-[400px] relative overflow-hidden cursor-pointer rounded-md">
       <Image
         alt={`Product ${product.metadata.img1}`}
         src={product.metadata.img1}
@@ -77,6 +77,7 @@ export default function ImageGallery({ product }: { product: Product }) {
         priority
         onClick={() => handleOnClicked(product.metadata.img1 as string, 1)}
       />
+      <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-logo relative flex top-10 justify-center text-bold">Click for full gallery</span>
     </div>
   )}
 </div>
