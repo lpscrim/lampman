@@ -27,7 +27,7 @@ export default function Card({ product }: { product: Product }) {
                 <span aria-hidden="true" className="absolute inset-0" />
                 {product.name}
               </h3>
-              <p className="mt-1 text-sm text-text3">{product.metadata.size}</p>
+              <p className="md:hidden lg:block mt-1 text-sm text-text3">{product.metadata.tag}</p>
             </div>
             <p className="text-sm font-medium text-text2h">
               £
