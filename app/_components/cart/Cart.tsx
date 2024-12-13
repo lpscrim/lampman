@@ -44,14 +44,15 @@ export default function Cart({
                   key={item.id}
                 >
                   <Link href={`/shop/${item.id}`}>
-                    <div className="flex gap-8">
-                      <Image
-                        src={item.images[0]}
-                        alt={item.name}
-                        className="rounded-md"
-                        width={100}
-                        height={100}
-                      />
+                    <div className="flex gap-4 xsm:gap-6 sm:gap-8 md:gap-10">
+                      <div className="w-[85px] xsm:w-[120px] xsm:h-[75px] sm:w-[150px] sm:h-[100px] relative overflow-hidden rounded-md">
+                        <Image
+                          src={item.images[0]}
+                          alt={item.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
                       <div className="flex w-full flex-col">
                         <h1 className="text-sm sm:text-lg font-bold">
                           {item.name}
@@ -64,7 +65,7 @@ export default function Cart({
                               ).toFixed(2)
                             : "NA"}
                         </p>
-                        <div className="flex pt-2 sm:hidden gap-4 ">
+                        <div className="flex pt-2 xsm:hidden gap-4 ">
                           <button
                             className="mx-auto px-2 py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
                             onClick={() => {
@@ -77,9 +78,9 @@ export default function Cart({
                       </div>
                     </div>
                   </Link>
-                  <div className="hidden sm:flex gap-4">
+                  <div className="hidden xsm:flex gap-4">
                     <button
-                      className="ml-8 px-1 sm:px-2 py-0 sm:py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
+                      className="ml-0 sm:ml-8 px-2 py-1 bg-secondary text-text1 text-xs font-bold uppercase rounded hover:bg-secondaryh focus:outline-none focus:bg-text2"
                       onClick={() => {
                         removeFromCart(item);
                       }}
