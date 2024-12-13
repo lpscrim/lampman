@@ -142,7 +142,7 @@ export default async function ProductPage({
                   If you have any questions about the item or on how to return
                   your item to us, contact us{" "}
                   <Link
-                    className="text-primary font-bold text-sm hover:text-primaryh"
+                    className="text-secondary font-bold text-sm hover:text-primaryh"
                     href="/contact"
                   >
                     HERE

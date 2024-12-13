@@ -24,7 +24,7 @@ export default function ContactPage() {
       showToast.success('Email sent!');
     }
   }
-
+//add bg pic behind form?
   return (
     <section className="bg-background h-screen pt-20">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
