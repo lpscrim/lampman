@@ -11,9 +11,9 @@ export default function AboutSection() {
         <p className="text-md h-5/6 mt-2 mb-4 px-6 lg:text-base text-pretty">
           Specializing in the restoration and refurbishment of
           antique lamps and antiques, we transform forgotten classic items into stunning,
-          functional pieces for modern homes.<br></br>
+          functional pieces for modern homes.<br></br><br></br>
           Each item is refurbished with care, ensuring that the original functionality is 
-          restored whilst the iconic look is tastefully preserved.<br></br>
+          restored whilst the iconic look is tastefully preserved.<br></br><br></br>
           Whether you&#39;re looking for a one-of-a-kind statement piece or a
           touch of vintage charm, our selection of lamps and curios will bring 
           authentic character and style into your home. <br></br>
