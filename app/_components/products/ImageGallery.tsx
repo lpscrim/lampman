@@ -65,7 +65,7 @@ export default function ImageGallery({ product }: { product: Product }) {
               priority
               onClick={() => handleOnClicked(product.images[0] as string, 0)}
             />
-             <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-2xl text-logo relative flex justify-center">
+             <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-2xl text-logo relative top-8 flex justify-center">
               Click for full gallery
             </span>
             </>
