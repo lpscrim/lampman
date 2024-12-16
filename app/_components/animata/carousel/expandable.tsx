@@ -40,7 +40,7 @@ const List = ({ item, className, index, activeItem, ...props }: ImageProps) => {
           "blur-[2px]  ": index !== activeItem,
         })}
         fill
-        quality={60}
+        quality={80}
       />
     
       {index === activeItem && (

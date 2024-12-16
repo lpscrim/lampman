@@ -31,7 +31,6 @@ export default function RootLayout({
         <title>{process.env.NEXT_PUBLIC_SITE_NAME}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description" content="Small shop selling refurbished goods" />
-        
       </head>
       <body className="position-relative bg-background">
         <CartProvider>
