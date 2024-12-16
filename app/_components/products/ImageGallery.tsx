@@ -54,8 +54,9 @@ export default function ImageGallery({ product }: { product: Product }) {
       )}
 
       <div className="lg:w-2/5 w-80 md:block hidden">
-        <div className="w-full max-w-[600px] h-[600px] relative overflow-hidden cursor-pointer rounded-md mb-8">
+        <div className="group w-full max-w-[600px] h-[600px] relative overflow-hidden cursor-pointer rounded-md mb-8">
           {product.images.length > 0 ? (
+            <>
             <Image
               alt={`Product ${product.id}`}
               src={product.images[0]}
@@ -64,11 +65,16 @@ export default function ImageGallery({ product }: { product: Product }) {
               priority
               onClick={() => handleOnClicked(product.images[0] as string, 0)}
             />
+             <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-2xl text-logo relative flex justify-center">
+              Click for full gallery
+            </span>
+            </>
           ) : null}
         </div>
 
-        {product.metadata.img1 && (
-          <div className="group w-full max-w-[600px] h-[400px] relative overflow-hidden cursor-pointer rounded-md">
+        {product.metadata.img1 && product.metadata.img2 &&(
+          <div className="flex flex-row">
+          <div className="group w-full xl:max-w-[290px] max-w-[600px] h-[290px] relative overflow-hidden cursor-pointer rounded-md">
             <Image
               alt={`Product ${product.metadata.img1}`}
               src={product.metadata.img1}
@@ -79,13 +85,31 @@ export default function ImageGallery({ product }: { product: Product }) {
                 handleOnClicked(product.metadata.img1 as string, 1)
               }
             />
-            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-logo relative flex top-10 justify-center text-bold">
+            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-logo relative flex top-10 justify-center">
               Click for full gallery
             </span>
           </div>
+          <div className="hidden xl:block group w-full ml-5 max-w-[290px] h-[290px] relative overflow-hidden cursor-pointer rounded-md">
+            <Image
+              alt={`Product ${product.metadata.img2}`}
+              src={product.metadata.img2}
+              fill
+              className="cursor-pointer object-cover"
+              priority
+              onClick={() =>
+                handleOnClicked(product.metadata.img1 as string, 1)
+              }
+            />
+            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-logo relative flex top-10 justify-center">
+              Click for full gallery
+            </span>
+          </div>
+          </div>
+          
+          
         )}
       </div>
-      <div className="md:hidden">
+      <div className="md:hidden group">
         {product.images.length > 0 ? (
           <div className="w-full h-[450px] relative overflow-hidden cursor-pointer rounded-md mb-4">
             <Image
@@ -95,7 +119,11 @@ export default function ImageGallery({ product }: { product: Product }) {
               className="object-cover"
               onClick={() => handleOnClicked(product.images[0] as string, 0)}
             />
+            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-primary relative flex top-96 justify-center font-bold">
+              Click for full gallery
+            </span>
           </div>
+          
         ) : null}
         {product.metadata.img1 && ( 
         <div className="flex flex-row items-center justify-around mt-3 space-x-4 md:space-x-0 overflow-hidden">
