@@ -22,7 +22,7 @@ export default function NavBar2() {
   return (
     <>
       <nav className="z-[9999] bg-secondary">
-        <div className=" container mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="text-[1.05rem] container mx-auto px-4 py-3 flex justify-between items-center">
           <Link
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -36,7 +36,7 @@ export default function NavBar2() {
             <SplitText text={siteName} />
           </Link>
 
-          <div className=" flex space-x-6 rtl:space-x-reverse ">
+          <div className="flex space-x-6 rtl:space-x-reverse ">
             <Link href="/" className="text-text1 font-bold hover:text-text1h">
               Home
             </Link>
