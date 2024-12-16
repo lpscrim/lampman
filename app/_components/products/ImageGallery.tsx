@@ -53,60 +53,52 @@ export default function ImageGallery({ product }: { product: Product }) {
         />
       )}
 
-      <div className="lg:w-2/5 w-80 md:block hidden">
-        <div className="group w-full max-w-[600px] h-[600px] relative overflow-hidden cursor-pointer rounded-md mb-8">
+      <div className="group lg:w-2/5 w-80 md:block hidden">
+        <div className=" w-full max-w-[600px] h-[600px] relative overflow-hidden cursor-pointer rounded-md mb-8">
           {product.images.length > 0 ? (
             <>
-            <Image
-              alt={`Product ${product.id}`}
-              src={product.images[0]}
-              fill
-              className="cursor-pointer object-cover"
-              priority
-              onClick={() => handleOnClicked(product.images[0] as string, 0)}
-            />
-             <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-2xl text-logo relative top-8 flex justify-center">
-              Click for full gallery
-            </span>
+              <Image
+                alt={`Product ${product.id}`}
+                src={product.images[0]}
+                fill
+                className="cursor-pointer object-cover"
+                priority
+                onClick={() => handleOnClicked(product.images[0] as string, 0)}
+              />
+              <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-2xl text-logo relative top-[550px] flex justify-center font-bold">
+                Click for full gallery
+              </span>
             </>
           ) : null}
         </div>
 
-        {product.metadata.img1 && product.metadata.img2 &&(
+        {product.metadata.img1 && product.metadata.img2 && (
           <div className="flex flex-row">
-          <div className="group w-full xl:max-w-[290px] max-w-[600px] h-[290px] relative overflow-hidden cursor-pointer rounded-md">
-            <Image
-              alt={`Product ${product.metadata.img1}`}
-              src={product.metadata.img1}
-              fill
-              className="cursor-pointer object-cover"
-              priority
-              onClick={() =>
-                handleOnClicked(product.metadata.img1 as string, 1)
-              }
-            />
-            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-logo relative flex top-10 justify-center">
-              Click for full gallery
-            </span>
+            <div className=" w-full xl:max-w-[290px] max-w-[600px] h-[290px] relative overflow-hidden cursor-pointer rounded-md">
+              <Image
+                alt={`Product ${product.metadata.img1}`}
+                src={product.metadata.img1}
+                fill
+                className="cursor-pointer object-cover"
+                priority
+                onClick={() =>
+                  handleOnClicked(product.metadata.img1 as string, 1)
+                }
+              />
+            </div>
+            <div className="hidden xl:block  w-full ml-5 max-w-[290px] h-[290px] relative overflow-hidden cursor-pointer rounded-md">
+              <Image
+                alt={`Product ${product.metadata.img2}`}
+                src={product.metadata.img2}
+                fill
+                className="cursor-pointer object-cover"
+                priority
+                onClick={() =>
+                  handleOnClicked(product.metadata.img1 as string, 1)
+                }
+              />
+            </div>
           </div>
-          <div className="hidden xl:block group w-full ml-5 max-w-[290px] h-[290px] relative overflow-hidden cursor-pointer rounded-md">
-            <Image
-              alt={`Product ${product.metadata.img2}`}
-              src={product.metadata.img2}
-              fill
-              className="cursor-pointer object-cover"
-              priority
-              onClick={() =>
-                handleOnClicked(product.metadata.img1 as string, 1)
-              }
-            />
-            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-logo relative flex top-10 justify-center">
-              Click for full gallery
-            </span>
-          </div>
-          </div>
-          
-          
         )}
       </div>
       <div className="md:hidden group">
@@ -119,50 +111,49 @@ export default function ImageGallery({ product }: { product: Product }) {
               className="object-cover"
               onClick={() => handleOnClicked(product.images[0] as string, 0)}
             />
-            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl text-primary relative flex top-96 justify-center font-bold">
+            <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-2xl font-bold text-logo relative flex top-96 justify-center">
               Click for full gallery
             </span>
           </div>
-          
         ) : null}
-        {product.metadata.img1 && ( 
-        <div className="flex flex-row items-center justify-around mt-3 space-x-4 md:space-x-0 overflow-hidden">
-          <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
-            {product.metadata.img1 && (
-              <Image
-                alt={`Product ${product.id}`}
-                src={product.metadata.img1}
-                fill
-                className="object-cover"
-                onClick={() => handleOnClicked(product.metadata.img1, 1)}
-              />
-            )}
-          </div>
+        {product.metadata.img1 && (
+          <div className="flex flex-row items-center justify-around mt-3 space-x-4 md:space-x-0 overflow-hidden">
+            <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
+              {product.metadata.img1 && (
+                <Image
+                  alt={`Product ${product.id}`}
+                  src={product.metadata.img1}
+                  fill
+                  className="object-cover"
+                  onClick={() => handleOnClicked(product.metadata.img1, 1)}
+                />
+              )}
+            </div>
 
-          <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
-            {product.metadata.img2 && (
-              <Image
-                alt={`Product ${product.id}`}
-                src={product.metadata.img2}
-                fill
-                className="object-cover"
-                onClick={() => handleOnClicked(product.metadata.img2, 2)}
-              />
-            )}
-          </div>
+            <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
+              {product.metadata.img2 && (
+                <Image
+                  alt={`Product ${product.id}`}
+                  src={product.metadata.img2}
+                  fill
+                  className="object-cover"
+                  onClick={() => handleOnClicked(product.metadata.img2, 2)}
+                />
+              )}
+            </div>
 
-          <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
-            {product.metadata.img3 && (
-              <Image
-                alt={`Product ${product.id}`}
-                src={product.metadata.img3}
-                fill
-                className="object-cover"
-                onClick={() => handleOnClicked(product.metadata.img3, 3)}
-              />
-            )}
+            <div className="w-full max-w-[200px] h-[200px] relative overflow-hidden cursor-pointer rounded-md">
+              {product.metadata.img3 && (
+                <Image
+                  alt={`Product ${product.id}`}
+                  src={product.metadata.img3}
+                  fill
+                  className="object-cover"
+                  onClick={() => handleOnClicked(product.metadata.img3, 3)}
+                />
+              )}
+            </div>
           </div>
-        </div>
         )}
       </div>
     </>
