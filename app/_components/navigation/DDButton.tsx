@@ -8,7 +8,7 @@ export default function DDButton() {
         <Link href="/shop">
           <span className="inline-flex">Shop</span>
         </Link>
-        <MenuButton aria-label="Open menu" className="pl-2 pt-0.5 inline-flex">
+        <MenuButton aria-label="Open menu" className="ml-2 pt-0.5 pr-2 -mr-2 inline-flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
