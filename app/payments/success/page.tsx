@@ -3,16 +3,13 @@ import Stripe from "stripe";
 import ClearCart from "@/app/_components/cart/ClearCart";
 import IncompletePage from "@/app/_components/checkout/LoadingSuccess";
 
-
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
   apiVersion: "2024-11-20.acacia",
 });
 
-
-
-export async function updateProductInDatabase(productId: string) {
+async function updateProductInDatabase(productId: string) {
   try {
     await stripe.products.update(productId, {
       // metadata: {
@@ -39,11 +36,11 @@ export default async function PaymentSuccess(props: {
   const id = searchParams.session_id;
 
   console.log("id:", id);
-  
- 
 
   try {
-    const session = await stripe.checkout.sessions.retrieve(String(id), {expand:['invoice']});
+    const session = await stripe.checkout.sessions.retrieve(String(id), {
+      expand: ["invoice"],
+    });
 
     let lineItemIds: { id: string }[] = [];
     let idsArray: string[] = [];
@@ -56,32 +53,34 @@ export default async function PaymentSuccess(props: {
     const address = session.shipping_details?.address;
     const created = session.created;
     const paymentId = session.payment_intent;
-    const invoice =  session?.invoice ? (typeof session.invoice === 'string' ? null : session.invoice) : null;
+    const invoice = session?.invoice
+      ? typeof session.invoice === "string"
+        ? null
+        : session.invoice
+      : null;
     const invoiceNum = invoice?.number;
     const invoiceName = invoice?.customer_name;
     const email = invoice?.customer_email;
-    
 
-   // for (const productId of idsArray) {
-    //  await updateProductInDatabase(productId);
-  // }
+    for (const productId of idsArray) {
+      await updateProductInDatabase(productId);
+    }
 
     if (!invoice || !invoiceNum || !invoiceName || !email) {
-      console.log('INCOMPLETE!')
-      return <IncompletePage />
+      console.log("INCOMPLETE!");
+      return <IncompletePage />;
     }
-    
+
     const invoiceDetails = {
       invoiceNum,
       invoiceName,
       email,
       address,
-      amount
+      amount,
     };
 
     console.log(String(idsArray) + String(lineItemIds) + id);
-    const date = new Date(created * 1000).toLocaleDateString('EN-UK')
-  
+    const date = new Date(created * 1000).toLocaleDateString("EN-UK");
 
     return (
       <div>
@@ -91,8 +90,10 @@ export default async function PaymentSuccess(props: {
               Thanks for your order!
             </h2>
             <p className="text-text1h mb-6 md:mb-8">
-              Your order{" "} <span className="text-logo">{String(invoiceDetails.invoiceNum)}</span> {" "}
-              
+              Your order{" "}
+              <span className="text-logo">
+                {String(invoiceDetails.invoiceNum)}
+              </span>{" "}
               will be processed within 24 hours during working days. We will
               notify you by email once your order has been shipped.
             </p>
@@ -101,9 +102,7 @@ export default async function PaymentSuccess(props: {
                 <dt className="font-normal mb-1 sm:mb-0 text-text1h ">
                   Date of order
                 </dt>
-                <dd className="font-medium text-text1 sm:text-end">
-                  {date}
-                </dd>
+                <dd className="font-medium text-text1 sm:text-end">{date}</dd>
               </dl>
               <dl className="sm:flex items-center justify-between gap-4">
                 <dt className="font-normal mb-1 sm:mb-0 text-text1h">
@@ -134,27 +133,30 @@ export default async function PaymentSuccess(props: {
                   Address
                 </dt>
                 <dd className="font-medium py-4 text-text1 sm:text-end">
-                  {invoiceDetails.address?.line1}<br></br>
-                  {invoiceDetails.address?.line2}<br></br>
-                  {invoiceDetails.address?.city}<br></br>
-                  {invoiceDetails.address?.postal_code}<br></br>
+                  {invoiceDetails.address?.line1}
+                  <br></br>
+                  {invoiceDetails.address?.line2}
+                  <br></br>
+                  {invoiceDetails.address?.city}
+                  <br></br>
+                  {invoiceDetails.address?.postal_code}
+                  <br></br>
                   {invoiceDetails.address?.country}
                 </dd>
               </dl>
               <dl className="sm:flex items-center justify-between gap-4">
-                <dt className="font-normal mb-1 sm:mb-0 text-text1h">
-                  Email
-                </dt>
+                <dt className="font-normal mb-1 sm:mb-0 text-text1h">Email</dt>
                 <dd className="font-medium text-text1 sm:text-end">
                   {String(invoiceDetails.email)}
                 </dd>
               </dl>
               <dl className="sm:flex items-center py-8 justify-between gap-4">
-                <dt className="font-normal mb-1 sm:mb-0 text-text1h">
-                  Total
-                </dt>
+                <dt className="font-normal mb-1 sm:mb-0 text-text1h">Total</dt>
                 <dd className="font-medium text-text1 sm:text-end">
-                  £{invoiceDetails.amount ? Math.round(invoiceDetails.amount/ 100 ).toFixed(2) : ''}
+                  £
+                  {invoiceDetails.amount
+                    ? Math.round(invoiceDetails.amount / 100).toFixed(2)
+                    : ""}
                 </dd>
               </dl>
             </div>
@@ -172,11 +174,7 @@ export default async function PaymentSuccess(props: {
         <ClearCart />
       </div>
     );
-
-
   } catch (error) {
     throw new Error("An error occurred while processing your request.");
   }
-
 }
-

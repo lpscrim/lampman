@@ -1,11 +1,25 @@
 import Stripe from "stripe";
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import { updateProductInDatabase } from "@/app/payments/success/page";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
   apiVersion: "2024-11-20.acacia",
 });
+
+async function updateProductInDatabase(productId: string) {
+  try {
+    await stripe.products.update(productId, {
+       metadata: {
+        stock: "0",
+       },
+      active: false,
+    });
+    console.log(`Product ${productId} updated successfully`);
+  } catch (error) {
+    console.error(`Error updating product ${productId}:`, error);
+    throw new Error(`Failed to update product ${productId}`);
+  }
+}
 
 export async function POST(request: NextRequest) {
   const sig = request.headers.get("stripe-signature") || "";
