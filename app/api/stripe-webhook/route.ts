@@ -22,10 +22,19 @@ async function updateProductInDatabase(productId: string) {
 }
 
 export async function POST(request: NextRequest) {
-  const sig = request.headers.get("stripe-signature") || "";
   const body = await request.text();
+  const sig = request.headers.get("stripe-signature");
 
   let event;
+
+  if (!sig || !body) {
+    return NextResponse.json(
+      { error: "Invalid Stripe payload/signature" },
+      {
+        status: 400,
+      }
+    );
+  }
 
   try {
     event = stripe.webhooks.constructEvent(
