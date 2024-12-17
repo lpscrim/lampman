@@ -28,7 +28,7 @@ export default async function Shop(props: { searchParams: SearchParams }) {
 
   try {
     const response = await stripe.products.list({
-      limit: 10,
+      limit: 100,
       expand: ["data.default_price"],
     });
 
