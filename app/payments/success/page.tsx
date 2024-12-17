@@ -63,7 +63,7 @@ export default async function PaymentSuccess(props: {
     
 
    // for (const productId of idsArray) {
-      await updateProductInDatabase(productId);
+    //  await updateProductInDatabase(productId);
   // }
 
     if (!invoice || !invoiceNum || !invoiceName || !email) {
