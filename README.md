@@ -1,7 +1,8 @@
 # Lampman
 
 Lampman is an ecommerce site designed for selling single item Lamps antiques without the need for inventory management. 
-Using Stripe API items are removed from stock immediately after purchase so that duplicate transactions cannot be made.
+
+Using Stripe API, items are removed from stock immediately after purchase via webhook and success page so that duplicate transactions cannot be made.
 
 ## Use
 
