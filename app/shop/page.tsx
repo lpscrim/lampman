@@ -61,7 +61,7 @@ export default async function Shop(props: { searchParams: SearchParams }) {
 
   return (
     <div className="min-h-svh mx-auto max-w-2xl px-4 py-2 sm:px-6 sm:py-4 lg:max-w-7xl lg:px-2">
-      <h2 className=" text-center py-4 border-b-2 border-t-2 border-secondary text-3xl font-bold tracking-tight text-text2">
+      <h2 className="text-center py-4 border-b-2 border-t-2 border-secondary text-3xl font-bold tracking-tight text-text2">
         Shop
       </h2>
       <ShopNav />

@@ -24,10 +24,10 @@ export default function Card({ product }: { product: Product }) {
           <div className="relative mt-4 flex justify-between">
             <div>
               <h3 className="text-sm text-text2h">
-                <span aria-hidden="true" className="absolute inset-0" />
+                <span aria-hidden="true" className="absolute inset-0"/>
                 {product.name}
               </h3>
-              <p className="md:opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out  mt-1 text-sm text-text3">{product.metadata.tag}</p>
+              <p className="md:opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out  mt-1 text-sm text-text3 capitalize">{product.metadata.tag}</p>
             </div>
             <p className="text-sm font-medium text-text2h">
               £
