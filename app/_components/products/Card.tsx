@@ -18,6 +18,7 @@ export default function Card({ product }: { product: Product }) {
                 src={product.images[0]}
                 className="rounded-md object-cover object-center"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             ) : null}
           </div>
