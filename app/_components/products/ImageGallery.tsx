@@ -63,6 +63,7 @@ export default function ImageGallery({ product }: { product: Product }) {
                 fill
                 className="cursor-pointer object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
                 onClick={() => handleOnClicked(product.images[0] as string, 0)}
               />
               <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-1000 ease-in-out text-xl xl:text-2xl text-logo  relative top-[550px] flex justify-center font-semibold">
@@ -81,6 +82,7 @@ export default function ImageGallery({ product }: { product: Product }) {
                 fill
                 className="cursor-pointer object-cover"
                 priority
+                sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw"
                 onClick={() =>
                   handleOnClicked(product.metadata.img1 as string, 1)
                 }
@@ -93,6 +95,7 @@ export default function ImageGallery({ product }: { product: Product }) {
                 fill
                 className="cursor-pointer object-cover"
                 priority
+                sizes="25vw"
                 onClick={() =>
                   handleOnClicked(product.metadata.img1 as string, 1)
                 }
@@ -108,6 +111,7 @@ export default function ImageGallery({ product }: { product: Product }) {
               alt={`Product ${product.id}`}
               src={product.images[0]}
               fill
+              sizes="95vw"
               className="object-cover"
               onClick={() => handleOnClicked(product.images[0] as string, 0)}
             />
@@ -125,6 +129,7 @@ export default function ImageGallery({ product }: { product: Product }) {
                   src={product.metadata.img1}
                   fill
                   className="object-cover"
+                  sizes="33vw"
                   onClick={() => handleOnClicked(product.metadata.img1, 1)}
                 />
               )}
@@ -137,6 +142,7 @@ export default function ImageGallery({ product }: { product: Product }) {
                   src={product.metadata.img2}
                   fill
                   className="object-cover"
+                  sizes="33vw"
                   onClick={() => handleOnClicked(product.metadata.img2, 2)}
                 />
               )}
@@ -148,6 +154,7 @@ export default function ImageGallery({ product }: { product: Product }) {
                   alt={`Product ${product.id}`}
                   src={product.metadata.img3}
                   fill
+                  sizes="33vw"
                   className="object-cover"
                   onClick={() => handleOnClicked(product.metadata.img3, 3)}
                 />
