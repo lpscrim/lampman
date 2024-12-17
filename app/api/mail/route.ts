@@ -8,7 +8,7 @@ export async function POST(request: Request): Promise<Response> {
   if (!WEB3FORMS_KEY) {
     return NextResponse.json({ message: 'API Key missing' }, { status: 500 });
   }
-    formData.append("access_key", "8dd2f85a-06a1-479d-ac08-93778f7bddf2");
+    formData.append("access_key", WEB3FORMS_KEY);
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
