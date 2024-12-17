@@ -1,6 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lampman
 
-// added preinstall to  package.json
-//build on netifly
+Lampman is an ecommerce site designed for selling single item Lamps antiques without the need for inventory management. 
+Using Stripe API items are removed from stock immediately after purchase so that duplicate transactions cannot be made.
 
-ERRORRR
+## Use
+
+Create .env.local folder at root and provide following variables
+
+```text
+STRIPE_PUBLIC=
+STRIPE_SECRET=
+
+WEB3FORMS=
+
+NEXT_PUBLIC_SITE_NAME=LampMan
+BASE_URL=http://localhost:3000/
+
+STRIPE_WEBHOOK_SECRET=
+
+```
