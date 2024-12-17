@@ -12,11 +12,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET ?? "", {
 
 
 
-async function updateProductInDatabase(productId: string) {
+export async function updateProductInDatabase(productId: string) {
   try {
     await stripe.products.update(productId, {
       // metadata: {
-      //   stock: "0",
+      //  stock: "0",
       // },
       active: false,
     });
@@ -62,9 +62,9 @@ export default async function PaymentSuccess(props: {
     const email = invoice?.customer_email;
     
 
-    for (const productId of idsArray) {
+   // for (const productId of idsArray) {
       await updateProductInDatabase(productId);
-    }
+  // }
 
     if (!invoice || !invoiceNum || !invoiceName || !email) {
       console.log('INCOMPLETE!')
