@@ -59,7 +59,7 @@ export default function Home() {
           </div>
           <div className="py-20" id="about">
             <Suspense fallback={<p>Loading</p>}>
-              <div className="py-12">
+              <div className="pb-12">
               <AboutSection />
               </div>
             </Suspense>
