@@ -26,7 +26,7 @@ export default function ContactPage() {
   }
 //add bg pic behind form?
   return (
-    <section className="bg-background h-screen">
+    <section className="bg-background h-screen pt-6 sm:pt-0">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-bold text-center text-text2">
           Contact Us
