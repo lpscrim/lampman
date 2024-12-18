@@ -64,7 +64,7 @@ export default async function Shop(props: { searchParams: SearchParams }) {
       <h2 className="text-center py-4 border-b-2 border-t-2 border-secondary text-3xl font-bold tracking-tight text-text2">
         Shop
       </h2>
-      <ShopNav />
+      <ShopNav type={type} />
       <Suspense fallback={<Loading />}>
         <ProductList products={products} type={type} />
       </Suspense>
